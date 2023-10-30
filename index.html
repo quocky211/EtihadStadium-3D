@@ -72,7 +72,58 @@
 			const geojsonLayer = new GeoJSONLayer({
 				url: "./data/data.geojson"
 			});
+			// Zone A
+			const geojsonLayer_A_roof = new GeoJSONLayer({
+				url: "./data/zone_a/zone_a_roof.geojson"
+			});
+			const geojsonLayer_A_wall = new GeoJSONLayer({
+				url: "./data/zone_a/zone_a_wall.geojson"
+			});
+			// Zone B
+			const geojsonLayer_B_roof = new GeoJSONLayer({
+				url: "./data/zone_b/zone_b_roof.geojson"
+			});
+			const geojsonLayer_B_wall = new GeoJSONLayer({
+				url: "./data/zone_b/zone_b_wall.geojson"
+			});
+			// Zone C
+			const geojsonLayer_C_roof = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_roof.geojson"
+			});
+			const geojsonLayer_C_wall = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_wall.geojson"
+			});
+			// Zone D
+			const geojsonLayer_D_roof = new GeoJSONLayer({
+				url: "./data/zone_d/zone_d_roof.geojson"
+			});
+			const geojsonLayer_D_wall = new GeoJSONLayer({
+				url: "./data/zone_d/zone_d_wall.geojson"
+			});
+			// Zone E
+			const geojsonLayer_E_roof = new GeoJSONLayer({
+				url: "./data/zone_e/zone_e_roof.geojson"
+			});
+			const geojsonLayer_E_wall = new GeoJSONLayer({
+				url: "./data/zone_e/zone_e_wall.geojson"
+			});
 			
+			geojsonLayer_A_roof.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 100.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			}; 
+
 			geojsonLayer.renderer = {
 				type: "simple",
 				symbol: {
@@ -87,11 +138,24 @@
 						}
 					]
 				}
-			};      
+			};     
+
 			const map = new Map({
                 basemap: "topo-vector",
                 ground: "world-elevation",
-                layers: [geojsonLayer]
+                layers: [
+					geojsonLayer, 
+					geojsonLayer_A_roof,
+					geojsonLayer_A_wall,
+					geojsonLayer_B_roof,
+					geojsonLayer_B_wall,
+					geojsonLayer_C_roof,
+					geojsonLayer_C_wall,
+					geojsonLayer_D_roof,
+					geojsonLayer_D_wall,
+					geojsonLayer_E_roof,
+					geojsonLayer_E_wall
+				]
             });
 
             const view = new SceneView({
