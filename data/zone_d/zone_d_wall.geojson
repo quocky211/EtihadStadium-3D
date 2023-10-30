@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall D",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.199554443021599, 53.48394379692464, 0],
+            [-2.199558737811756, 53.483942413607, 0],
+            [-2.199621368924193, 53.483969502236405, 0]
+          ]
+        ]
+      },
+      "id": "toa1"
+    }
+  ]
+}

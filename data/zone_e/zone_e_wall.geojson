@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall E",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[]]
+      },
+      "id": "toa1"
+    }
+  ]
+}

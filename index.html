@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title>Smartcity - Building Map</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Smartcity - Building Map</title>
 
-<style>
-	* {
-		padding: 0;
-		margin: 0;
-	}
-	html, body, #viewDiv {
-		height: 100%;
-		width: 100%;
-	}
-</style>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
 
-<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-<script src="https://js.arcgis.com/4.28/"></script>
-<script>
-	var list_points = [];
-    var string_points = "";
-	function copyTextToClipboard(text) {
-        if (!navigator.clipboard) {
-            fallbackCopyTextToClipboard(text);
-            return;
-        }
-        navigator.clipboard.writeText(text).then(function() {
-            console.log('Async: Copying to clipboard was successful!');
-        }, function(err) {
-            console.error('Async: Could not copy text: ', err);
-        });
-    }
-        require([
-            "esri/Map",
+		html,
+		body,
+		#viewDiv {
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+	<script src="https://js.arcgis.com/4.28/"></script>
+	<script>
+		var list_points = [];
+		var string_points = "";
+		function copyTextToClipboard(text) {
+			if (!navigator.clipboard) {
+				fallbackCopyTextToClipboard(text);
+				return;
+			}
+			navigator.clipboard.writeText(text).then(function () {
+				console.log('Async: Copying to clipboard was successful!');
+			}, function (err) {
+				console.error('Async: Could not copy text: ', err);
+			});
+		}
+		require([
+			"esri/Map",
 			"esri/Graphic",
-            "esri/views/SceneView",
+			"esri/views/SceneView",
 			"esri/geometry/Mesh",
 			"esri/geometry/Point",
-            "esri/layers/GeoJSONLayer",
-            "esri/layers/SceneLayer", "esri/layers/GraphicsLayer", "esri/Graphic", "esri/request"
-        ], function (Map, Graphic, SceneView, Mesh, Point, GeoJSONLayer, SceneLayer,
-                     GraphicsLayer, Graphic, esriRequest) {
-        	var createGraphic = function(data) {
-    			return new Graphic({
-    				geometry : data,
-    				symbol : data.symbol,
-    				attributes : data,
-    				popupTemplate : data.popupTemplate
-    			});
-    		};
-    		
-    		const json_options = {
-    			query : {
-    				f : "json"
-    			},
-    			responseType : "json"
-    		};
+			"esri/layers/GeoJSONLayer",
+			"esri/layers/SceneLayer", "esri/layers/GraphicsLayer", "esri/Graphic", "esri/request"
+		], function (Map, Graphic, SceneView, Mesh, Point, GeoJSONLayer, SceneLayer,
+			GraphicsLayer, Graphic, esriRequest) {
+			var createGraphic = function (data) {
+				return new Graphic({
+					geometry: data,
+					symbol: data.symbol,
+					attributes: data,
+					popupTemplate: data.popupTemplate
+				});
+			};
+
+			const json_options = {
+				query: {
+					f: "json"
+				},
+				responseType: "json"
+			};
 			// request json
-			esriRequest('./data/data.json', json_options).then(function(response) {
+			esriRequest('./data/data.json', json_options).then(function (response) {
 				var graphicsLayer = new GraphicsLayer();
 				console.log(response);
-				response.data.forEach(function(data){
+				response.data.forEach(function (data) {
 					graphicsLayer.add(createGraphic(data));
 				});
 				map.add(graphicsLayer);
@@ -107,7 +110,7 @@
 			const geojsonLayer_E_wall = new GeoJSONLayer({
 				url: "./data/zone_e/zone_e_wall.geojson"
 			});
-			
+
 			geojsonLayer_A_roof.renderer = {
 				type: "simple",
 				symbol: {
@@ -122,7 +125,83 @@
 						}
 					]
 				}
-			}; 
+			};
+			geojsonLayer_A_wall.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 100.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
+			geojsonLayer_B_wall.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 100.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
+			geojsonLayer_C_wall.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 100.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
+			geojsonLayer_D_wall.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 100.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
+			geojsonLayer_E_wall.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 100.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
+
 
 			geojsonLayer.renderer = {
 				type: "simple",
@@ -138,13 +217,13 @@
 						}
 					]
 				}
-			};     
+			};
 
 			const map = new Map({
-                basemap: "topo-vector",
-                ground: "world-elevation",
-                layers: [
-					geojsonLayer, 
+				basemap: "topo-vector",
+				ground: "world-elevation",
+				layers: [
+					geojsonLayer,
 					geojsonLayer_A_roof,
 					geojsonLayer_A_wall,
 					geojsonLayer_B_roof,
@@ -156,68 +235,69 @@
 					geojsonLayer_E_roof,
 					geojsonLayer_E_wall
 				]
-            });
+			});
 
-            const view = new SceneView({
-                container: "viewDiv",
-                map: map,
-                camera: {
-                    position: [-2.1957615021032595, 53.4836002000014, 300],
-                    heading: 260,
-                    tilt: 50
-                }
-            });
-            view.popup.defaultPopupTemplateEnabled = true;
+			const view = new SceneView({
+				container: "viewDiv",
+				map: map,
+				camera: {
+					position: [-2.1957615021032595, 53.4836002000014, 300],
+					heading: 260,
+					tilt: 50
+				}
+			});
+			view.popup.defaultPopupTemplateEnabled = true;
 			// view.popup.autoOpenEnabled = false;
-            view.on("click", function(event) { // Listen for the click event
-                view.hitTest(event).then(function(hitTestResults) {
-                    if (hitTestResults.results) {        
-                        list_points.push([event.mapPoint.longitude, event.mapPoint.latitude]);
-                        string_points += "[" + event.mapPoint.longitude + ", " + event.mapPoint.latitude + "],"
-                        copyTextToClipboard(string_points);
-                    }
-                })
-            });
-            /* ============================================================ */
-            
-            /* ============================================================ */
+			view.on("click", function (event) { // Listen for the click event
+				view.hitTest(event).then(function (hitTestResults) {
+					if (hitTestResults.results) {
+						list_points.push([event.mapPoint.longitude, event.mapPoint.latitude]);
+						string_points += "[" + event.mapPoint.longitude + ", " + event.mapPoint.latitude + "],"
+						copyTextToClipboard(string_points);
+					}
+				})
+			});
+			/* ============================================================ */
+
+			/* ============================================================ */
 			const location_1 = new Point({
-                x: -2.2039190504606783,
-                y: 53.48385645170768,
-                z: 50
-            });
-			Mesh.createFromGLTF(location_1, "./model/X7Blender.glb") 
-                .then(function (geometry) {
-                    geometry.scale(10, { origin: location_1 });
-                    geometry.rotate(0, 0, 0);
-                    const graphic = new Graphic({
-                        geometry,
-                        symbol: {
+				x: -2.2039190504606783,
+				y: 53.48385645170768,
+				z: 50
+			});
+			Mesh.createFromGLTF(location_1, "./model/X7Blender.glb")
+				.then(function (geometry) {
+					geometry.scale(10, { origin: location_1 });
+					geometry.rotate(0, 0, 0);
+					const graphic = new Graphic({
+						geometry,
+						symbol: {
 							type: "mesh-3d",
-                            symbolLayers: [
-							{
-								type: "fill",
-                                material: {
-									color: "gray"
-								},
-                                size: 1000
-                            }]
-                        }
-                    });
+							symbolLayers: [
+								{
+									type: "fill",
+									material: {
+										color: "gray"
+									},
+									size: 1000
+								}]
+						}
+					});
 					view.graphics.add(graphic);
 				})
-                .catch(console.error);
-			});
-            /* ============================================================ */
+				.catch(console.error);
+		});
+		/* ============================================================ */
 
-            
-            /* ============================================================ */
-            
-            /* ============================================================ */
-    </script>
+
+		/* ============================================================ */
+
+		/* ============================================================ */
+	</script>
 </head>
 
 <body>
 	<div id="viewDiv"></div>
 </body>
+
 </html>

@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1989114552288456, 53.483166136601966, 0],
+            [-2.198911050160574, 53.48316052872457, 0],
+            [-2.1989116740907337, 53.48316986221313, 0]
+          ]
+        ]
+      },
+      "id": "toa1"
+    }
+  ]
+}
