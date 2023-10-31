@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall C",
+        "height": 250,
+        "idb": "8"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1989712753736876, 53.483409080733395, 0],
+            [-2.1989134274165116, 53.48321028997786, 0],
+            [-2.1988090622166316, 53.48322243140035, 0],
+            [-2.198868515977505, 53.48341789550454, 0],
+            [-2.1989700119473294, 53.4834093545757, 0]
+          ]
+        ]
+      },
+      "id": "toa1"
+    }
+  ]
+}

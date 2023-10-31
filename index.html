@@ -96,6 +96,9 @@
 			const geojsonLayer_C_wall = new GeoJSONLayer({
 				url: "./data/zone_c/zone_c_wall.geojson"
 			});
+			const geojsonLayer_C_gate = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_gate.geojson"
+			});
 			// Zone D
 			const geojsonLayer_D_roof = new GeoJSONLayer({
 				url: "./data/zone_d/zone_d_roof.geojson"
@@ -171,6 +174,21 @@
 					]
 				}
 			};
+			geojsonLayer_C_gate.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 80.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
 			geojsonLayer_D_wall.renderer = {
 				type: "simple",
 				symbol: {
@@ -230,6 +248,7 @@
 					geojsonLayer_B_wall,
 					geojsonLayer_C_roof,
 					geojsonLayer_C_wall,
+					geojsonLayer_C_gate,
 					geojsonLayer_D_roof,
 					geojsonLayer_D_wall,
 					geojsonLayer_E_roof,
