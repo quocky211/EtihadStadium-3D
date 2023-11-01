@@ -280,14 +280,18 @@
 
 			/* ============================================================ */
 			const location_1 = new Point({
-				x: -2.2039190504606783,
-				y: 53.48385645170768,
+				x: -2.199214597876507,
+				y: 53.4838823487394,
 				z: 50
 			});
-			Mesh.createFromGLTF(location_1, "./model/X7Blender.glb")
+			Mesh.createFromGLTF(location_1, "./model/Part1.gltf")
 				.then(function (geometry) {
-					geometry.scale(10, { origin: location_1 });
-					geometry.rotate(0, 0, 0);
+					geometry.scale(1000, { 
+						origin: {
+							location_1
+						}
+					});
+					geometry.rotate(0, 0, 90);
 					const graphic = new Graphic({
 						geometry,
 						symbol: {
@@ -296,10 +300,11 @@
 								{
 									type: "fill",
 									material: {
-										color: "gray"
+										// color: "rgba(0, 0, 255, 0.5)"
 									},
 									size: 1000
-								}]
+								}
+							]
 						}
 					});
 					view.graphics.add(graphic);
