@@ -43,9 +43,14 @@
 			"esri/geometry/Mesh",
 			"esri/geometry/Point",
 			"esri/layers/GeoJSONLayer",
-			"esri/layers/SceneLayer", "esri/layers/GraphicsLayer", "esri/Graphic", "esri/request"
+			"esri/layers/SceneLayer", 
+			"esri/layers/GraphicsLayer",
+			"esri/layers/FeatureLayer", 
+			"esri/Graphic", 
+			"esri/request",
+			"esri/symbols/ObjectSymbol3DLayer"
 		], function (Map, Graphic, SceneView, Mesh, Point, GeoJSONLayer, SceneLayer,
-			GraphicsLayer, Graphic, esriRequest) {
+			GraphicsLayer, FeatureLayer, Graphic, esriRequest, ObjectSymbol3DLayer) {
 			var createGraphic = function (data) {
 				return new Graphic({
 					geometry: data,
@@ -330,12 +335,55 @@
 					}
 				}
 			});
+			// Spiral Stairs
+
+			// Round Columns for Spiral Stairs
+			const roundColumnLayerSpiral = new GraphicsLayer();
+			const roundColumn_point_spiral = [
+				[-2.199214597876507, 53.4838823487394, 50],
+				[-2.1988804312003003, 53.483538189491995, 50],
+				[-2.1987563679243802, 53.48310495815264, 50],
+				[-2.1988623580722795, 53.48271284521822, 50],
+				[-2.201882944520377, 53.48360738298203, 50],
+				[-2.201993023811123, 53.48321004165876, 50],
+				[-2.2018713186867824, 53.48277344024631, 50],
+				[-2.201540077013828, 53.48243117205023, 50]
+			]
+			const roundColumn_symbol_spiral = {
+				type: "point-3d",
+				symbolLayers: [
+					{
+						type: "object",
+						width: 7,
+						height: 100,
+						resource: { 
+							primitive: "cylinder" 
+						},
+						material: { 
+							color: "red" 
+						}
+					}
+				]
+			}
+			for (const point of roundColumn_point_spiral) {
+				const [x, y, z] = point;
+				const pointLocation = new Point({
+					x: x,
+					y: y,
+					z: z
+				});
+				const roundColumn_pointGraphic = new Graphic({
+					geometry: pointLocation,
+					symbol: roundColumn_symbol_spiral
+				});
+				roundColumnLayerSpiral.add(roundColumn_pointGraphic);
+			}
 
 			const map = new Map({
 				basemap: "topo-vector",
 				ground: "world-elevation",
 				layers: [
-					geojsonLayer,
+					// geojsonLayer,
 					geojsonLayer_A_roof,
 					geojsonLayer_A_wall,
 					geojsonLayer_B_roof,
@@ -352,6 +400,7 @@
 					geojsonLayer_E_wall
 				]
 			});
+			map.add(roundColumnLayerSpiral);
 
 			const view = new SceneView({
 				container: "viewDiv",
@@ -408,11 +457,6 @@
 			// 	})
 			// 	.catch(console.error);
 		});
-		/* ============================================================ */
-
-
-		/* ============================================================ */
-
 		/* ============================================================ */
 	</script>
 </head>
