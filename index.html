@@ -90,14 +90,23 @@
 				url: "./data/zone_b/zone_b_wall.geojson"
 			});
 			// Zone C
-			const geojsonLayer_C_roof = new GeoJSONLayer({
-				url: "./data/zone_c/zone_c_roof.geojson"
+			const geojsonLayer_C_top = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_top.geojson"
 			});
 			const geojsonLayer_C_wall = new GeoJSONLayer({
 				url: "./data/zone_c/zone_c_wall.geojson"
 			});
 			const geojsonLayer_C_gate = new GeoJSONLayer({
 				url: "./data/zone_c/zone_c_gate.geojson"
+			});
+			const geojsonLayer_C_curve = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_curve.geojson"
+			});
+			const geojsonLayer_C_roof_a = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_roof_a.geojson"
+			});
+			const geojsonLayer_C_roof_b = new GeoJSONLayer({
+				url: "./data/zone_c/zone_c_roof_b.geojson"
 			});
 			// Zone D
 			const geojsonLayer_D_roof = new GeoJSONLayer({
@@ -166,9 +175,24 @@
 					symbolLayers: [
 						{
 							type: "extrude",
-							size: 100.00000,
+							size: 101.00000,
 							material: {
-								color: "blue"
+								color: "#f0f0f0"
+							}
+						}
+					]
+				}
+			};
+			geojsonLayer_C_top.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 0.4,
+							material: {
+								color: "white"
 							}
 						}
 					]
@@ -182,6 +206,53 @@
 						{
 							type: "extrude",
 							size: 80.00000,
+							material: {
+								color: "blue"
+							}
+						}
+					]
+				}
+			};
+			geojsonLayer_C_curve.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 1.50000,
+							material: {
+								color: "#c4c4c4"
+							}
+						}
+					]
+				}
+			};
+			// with vector: -0.0005328450731833, -0.00003034351641
+			geojsonLayer_C_roof_a.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 0.2,
+							material: {
+								color: "#c4c4c4"
+							}
+						}
+					]
+				}
+			};
+			// with vector: 0.0002363328555414, 0.00001309398714
+			geojsonLayer_C_roof_b.renderer = {
+				type: "simple",
+				symbol: {
+					type: "polygon-3d",
+					symbolLayers: [
+						{
+							type: "extrude",
+							size: 0.2,
 							material: {
 								color: "blue"
 							}
@@ -246,8 +317,11 @@
 					geojsonLayer_A_wall,
 					geojsonLayer_B_roof,
 					geojsonLayer_B_wall,
-					geojsonLayer_C_roof,
+					geojsonLayer_C_top,
 					geojsonLayer_C_wall,
+					geojsonLayer_C_curve,
+					geojsonLayer_C_roof_a,
+					geojsonLayer_C_roof_b,
 					geojsonLayer_C_gate,
 					geojsonLayer_D_roof,
 					geojsonLayer_D_wall,
