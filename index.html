@@ -79,28 +79,43 @@
             popupTemplate: data.popupTemplate,
           });
         };
-        
-
-        // geojson layer
-        // const geojsonLayer = new GeoJSONLayer({
-        //   url: "./data/spiral_stair/column.geojson",
-        //   renderer: {
-        //     type: "simple",
-        //     symbol: {
-        //       type: "polygon-3d",
-        //       symbolLayers: [
-        //         {
-        //           type: "extrude",
-        //           size: 100.0,
-        //           material: {
-        //             color: "green",
-        //           },
-        //         },
-        //       ],
-        //     },
-        //   },
-        // });
-
+        // spiral_stair
+        const spiral_stair_floor = new GeoJSONLayer({
+          url: "./data/spiral_stair/spiral_stair_floor.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.01,
+                  material: {
+                    color: "green"
+                  }
+                }
+              ]
+            }
+          }
+        });
+        const spiral_stair_handles = new GeoJSONLayer({
+          url: "./data/spiral_stair/spiral_stair_handles.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                  size: 1,
+                  material: {
+                    color: "black"
+                  }
+                }
+              ]
+            }
+          }
+        });
         // Zone A
         const geojsonLayer_A_roof = new GeoJSONLayer({
           url: "./data/zone_a/zone_a_roof.geojson",
@@ -664,12 +679,46 @@
           });
           roundColumnLayerSpiral.add(roundColumn_pointGraphic);
         }
+        /* ----------End Round Columns for Spiral Stairs---------- */
 
+        // Polygon banister Layer
+        const polygon_banister_Layer = new GraphicsLayer();
+        var polygon_banister = [
+          {
+            type: "polygon",
+            rings: [
+              [-2.1990145030118327, 53.48348685248627, 99.09999999999806],
+              [-2.199026505948793, 53.48349359005887, 98.99999999999807],
+              [-2.199036669927162, 53.48350913594487, 98.89999999999807],
+              [-2.1990435781657482, 53.48351918950201, 98.79999999999808],
+              [-2.1990462447161763, 53.48353190463802, 98.69999999999808],
+
+              [-2.1990462447161763, 53.48353190463802, 100.69999999999808],
+              [-2.1990435781657482, 53.48351918950201, 100.79999999999808],
+              [-2.199036669927162, 53.48350913594487, 100.89999999999807],
+              [-2.199026505948793, 53.48349359005887, 100.99999999999807],
+              [-2.1990145030118327, 53.48348685248627, 99.09999999999806],
+            ],
+            symbol: {
+              type: "extrude",
+              color: "black",
+              outline: {
+                color: "black",
+                width: 2
+              }
+            }
+          }
+        ]
+        polygon_banister.forEach(function (data) {
+          polygon_banister_Layer.add(createGraphic(data));
+        });
+        /* ---------- End Polygon banister Layer ---------- */
         const map = new Map({
           basemap: "topo-vector",
           ground: "world-elevation",
           layers: [
-            // geojsonLayer,
+            // spiral_stair_floor,
+            // spiral_stair_handles,
             geojsonLayer_A_roof,
             geojsonLayer_A_wall,
             geojsonLayer_B_roof,
@@ -699,7 +748,7 @@
             geojsonLayer_E_wall,
           ],
         });
-        map.add(roundColumnLayerSpiral);
+        // map.addMany([roundColumnLayerSpiral, polygon_banister_Layer]);
 
         const view = new SceneView({
           container: "viewDiv",
@@ -749,43 +798,48 @@
         });
         /* ============================================================ */
 
-        /* ============================================================ */
-        // const location_1 = new Point({
-        // 	x: -2.199214597876507,
-        // 	y: 53.4838823487394,
-        // 	z: 50
-        // });
-        // Mesh.createFromGLTF(location_1, "./model/Part1.gltf")
-        // 	.then(function (geometry) {
-        // 		geometry.scale(1000, {
-        // 			origin: {
-        // 				location_1
-        // 			}
-        // 		});
-        // 		geometry.rotate(0, 0, 90);
-        // 		const graphic = new Graphic({
-        // 			geometry,
-        // 			symbol: {
-        // 				type: "mesh-3d",
-        // 				symbolLayers: [
-        // 					{
-        // 						type: "fill",
-        // 						material: {
-        // 							// color: "rgba(0, 0, 255, 0.5)"
-        // 						},
-        // 						size: 1000
-        // 					}
-        // 				]
-        // 			}
-        // 		});
-        // 		view.graphics.add(graphic);
-        // 	})
-        // 	.catch(console.error);
+        /* Spiral Stair */
+        const locations = [
+          { x: -2.199214597876507, y: 53.4838823487394, z: 42 },
+          // { x: -2.198889337447818, y: 53.483537990433575, z: 42},
+          // { x: -2.198753326311802, y: 53.4831040771985, z: 42},
+          // { x: -2.1988669791679825, y: 53.482715645543365, z: 42},
+          // { x: -2.2018982099127284, y: 53.48360418053181, z: 42},
+          // { x: -2.20200827278425, y: 53.483208960860466, z: 42},
+          // { x: -2.2018859292270636, y: 53.48277537857368, z: 42},
+          // { x: -2.2015557232799385, y: 53.48242702862161, z: 42},
+        ];
+        locations.forEach(location => {
+          const locationPoint = new Point(location);
+
+          Mesh.createFromGLTF(locationPoint, "./model/Part1.gltf")
+            .then(function (geometry) {
+              geometry.scale(1000, {
+                origin: {
+                  locationPoint
+                }
+              });
+              geometry.rotate(0, 0, 90);
+              const graphic = new Graphic({
+                geometry,
+                symbol: {
+                  type: "mesh-3d",
+                  symbolLayers: [
+                    {
+                      type: "fill",
+                      material: {
+                        // color: "rgba(0, 0, 255, 0.5)"
+                      },
+                      size: 1000
+                    }
+                  ]
+                }
+              });
+              view.graphics.add(graphic);
+            })
+            .catch(console.error);
+        });
       });
-      /* ============================================================ */
-
-      /* ============================================================ */
-
       /* ============================================================ */
     </script>
   </head>
