@@ -68,7 +68,6 @@
         GraphicsLayer,
         Graphic,
         esriRequest,
-        FeatureLayer,
         ObjectSymbol3DLayer,
         Circle
       ) {
@@ -80,26 +79,27 @@
             popupTemplate: data.popupTemplate,
           });
         };
+        
 
         // geojson layer
-        const geojsonLayer = new GeoJSONLayer({
-          url: "./data/spiral_stair/column.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 100.0,
-                  material: {
-                    color: "green",
-                  },
-                },
-              ],
-            },
-          },
-        });
+        // const geojsonLayer = new GeoJSONLayer({
+        //   url: "./data/spiral_stair/column.geojson",
+        //   renderer: {
+        //     type: "simple",
+        //     symbol: {
+        //       type: "polygon-3d",
+        //       symbolLayers: [
+        //         {
+        //           type: "extrude",
+        //           size: 100.0,
+        //           material: {
+        //             color: "green",
+        //           },
+        //         },
+        //       ],
+        //     },
+        //   },
+        // });
 
         // Zone A
         const geojsonLayer_A_roof = new GeoJSONLayer({
