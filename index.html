@@ -1,327 +1,594 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Smartcity - Building Map</title>
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-	<title>Smartcity - Building Map</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
 
-	<style>
-		* {
-			padding: 0;
-			margin: 0;
-		}
+      html,
+      body,
+      #viewDiv {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
 
-		html,
-		body,
-		#viewDiv {
-			height: 100%;
-			width: 100%;
-		}
-	</style>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.28/esri/themes/light/main.css"
+    />
 
-	<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-	<script src="https://js.arcgis.com/4.28/"></script>
-	<script>
-		var list_points = [];
-		var string_points = "";
-		function copyTextToClipboard(text) {
-			if (!navigator.clipboard) {
-				fallbackCopyTextToClipboard(text);
-				return;
-			}
-			navigator.clipboard.writeText(text).then(function () {
-				console.log('Async: Copying to clipboard was successful!');
-			}, function (err) {
-				console.error('Async: Could not copy text: ', err);
-			});
-		}
-		require([
-			"esri/Map",
-			"esri/Graphic",
-			"esri/views/SceneView",
-			"esri/geometry/Mesh",
-			"esri/geometry/Point",
-			"esri/layers/GeoJSONLayer",
-			"esri/layers/SceneLayer", "esri/layers/GraphicsLayer", "esri/Graphic", "esri/request"
-		], function (Map, Graphic, SceneView, Mesh, Point, GeoJSONLayer, SceneLayer,
-			GraphicsLayer, Graphic, esriRequest) {
-			var createGraphic = function (data) {
-				return new Graphic({
-					geometry: data,
-					symbol: data.symbol,
-					attributes: data,
-					popupTemplate: data.popupTemplate
-				});
-			};
+    <script src="https://js.arcgis.com/4.28/"></script>
 
-			const json_options = {
-				query: {
-					f: "json"
-				},
-				responseType: "json"
-			};
-			// request json
-			esriRequest('./data/data.json', json_options).then(function (response) {
-				var graphicsLayer = new GraphicsLayer();
-				console.log(response);
-				response.data.forEach(function (data) {
-					graphicsLayer.add(createGraphic(data));
-				});
-				map.add(graphicsLayer);
+    <script>
+      var list_points = [];
+      var string_points = "";
+      function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+          fallbackCopyTextToClipboard(text);
+          return;
+        }
+        navigator.clipboard.writeText(text).then(
+          function () {
+            console.log("Async: Copying to clipboard was successful!");
+          },
+          function (err) {
+            console.error("Async: Could not copy text: ", err);
+          }
+        );
+      }
+      require([
+        "esri/Map",
+        "esri/Graphic",
+        "esri/views/SceneView",
+        "esri/geometry/Mesh",
+        "esri/geometry/Point",
+        "esri/layers/GeoJSONLayer",
+        "esri/layers/SceneLayer",
+        "esri/layers/GraphicsLayer",
+        "esri/Graphic",
+        "esri/request",
+        "esri/geometry/Circle",
+      ], function (
+        Map,
+        Graphic,
+        SceneView,
+        Mesh,
+        Point,
+        GeoJSONLayer,
+        SceneLayer,
+        GraphicsLayer,
+        Graphic,
+        esriRequest,
+        Circle
+      ) {
+        var createGraphic = function (data) {
+          return new Graphic({
+            geometry: data,
+            symbol: data.symbol,
+            attributes: data,
+            popupTemplate: data.popupTemplate,
+          });
+        };
 
-			});
-			// geojson layer
-			const geojsonLayer = new GeoJSONLayer({
-				url: "./data/data.geojson"
-			});
-			// Zone A
-			const geojsonLayer_A_roof = new GeoJSONLayer({
-				url: "./data/zone_a/zone_a_roof.geojson"
-			});
-			const geojsonLayer_A_wall = new GeoJSONLayer({
-				url: "./data/zone_a/zone_a_wall.geojson"
-			});
-			// Zone B
-			const geojsonLayer_B_roof = new GeoJSONLayer({
-				url: "./data/zone_b/zone_b_roof.geojson"
-			});
-			const geojsonLayer_B_wall = new GeoJSONLayer({
-				url: "./data/zone_b/zone_b_wall.geojson"
-			});
-			// Zone C
-			const geojsonLayer_C_roof = new GeoJSONLayer({
-				url: "./data/zone_c/zone_c_roof.geojson"
-			});
-			const geojsonLayer_C_wall = new GeoJSONLayer({
-				url: "./data/zone_c/zone_c_wall.geojson"
-			});
-			const geojsonLayer_C_gate = new GeoJSONLayer({
-				url: "./data/zone_c/zone_c_gate.geojson"
-			});
-			// Zone D
-			const geojsonLayer_D_roof = new GeoJSONLayer({
-				url: "./data/zone_d/zone_d_roof.geojson"
-			});
-			const geojsonLayer_D_wall = new GeoJSONLayer({
-				url: "./data/zone_d/zone_d_wall.geojson"
-			});
-			// Zone E
-			const geojsonLayer_E_roof = new GeoJSONLayer({
-				url: "./data/zone_e/zone_e_roof.geojson"
-			});
-			const geojsonLayer_E_wall = new GeoJSONLayer({
-				url: "./data/zone_e/zone_e_wall.geojson"
-			});
+        const json_options = {
+          query: {
+            f: "json",
+          },
+          responseType: "json",
+        };
 
-			geojsonLayer_A_roof.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
-			geojsonLayer_A_wall.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
-			geojsonLayer_B_wall.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
-			geojsonLayer_C_wall.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
-			geojsonLayer_C_gate.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 80.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
-			geojsonLayer_D_wall.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
-			geojsonLayer_E_wall.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "blue"
-							}
-						}
-					]
-				}
-			};
+        // request json
+        esriRequest("./data/data.json", json_options).then(function (response) {
+          var graphicsLayer = new GraphicsLayer();
+          console.log(response);
+          response.data.forEach(function (data) {
+            graphicsLayer.add(createGraphic(data));
+          });
+          map.add(graphicsLayer);
+        });
 
+        // geojson layer
+        const geojsonLayer = new GeoJSONLayer({
+          url: "./data/data.geojson",
+        });
 
-			geojsonLayer.renderer = {
-				type: "simple",
-				symbol: {
-					type: "polygon-3d",
-					symbolLayers: [
-						{
-							type: "extrude",
-							size: 100.00000,
-							material: {
-								color: "green"
-							}
-						}
-					]
-				}
-			};
+        // Zone A
+        const geojsonLayer_A_roof = new GeoJSONLayer({
+          url: "./data/zone_a/zone_a_roof.geojson",
+        });
+        const geojsonLayer_A_wall = new GeoJSONLayer({
+          url: "./data/zone_a/zone_a_wall.geojson",
+        });
 
-			const map = new Map({
-				basemap: "topo-vector",
-				ground: "world-elevation",
-				layers: [
-					geojsonLayer,
-					geojsonLayer_A_roof,
-					geojsonLayer_A_wall,
-					geojsonLayer_B_roof,
-					geojsonLayer_B_wall,
-					geojsonLayer_C_roof,
-					geojsonLayer_C_wall,
-					geojsonLayer_C_gate,
-					geojsonLayer_D_roof,
-					geojsonLayer_D_wall,
-					geojsonLayer_E_roof,
-					geojsonLayer_E_wall
-				]
-			});
+        // Zone B
+        // Tạo hình tròn
+        // const circle = new Circle({
+        // 	center: [-2.198912062628337, 53.48305478052031, 0],
+        // 	radius: 20 // Đơn vị: mét
+        // });
 
-			const view = new SceneView({
-				container: "viewDiv",
-				map: map,
-				camera: {
-					position: [-2.1957615021032595, 53.4836002000014, 300],
-					heading: 260,
-					tilt: 50
-				}
-			});
-			view.popup.defaultPopupTemplateEnabled = true;
-			// view.popup.autoOpenEnabled = false;
-			view.on("click", function (event) { // Listen for the click event
-				view.hitTest(event).then(function (hitTestResults) {
-					if (hitTestResults.results) {
-						list_points.push([event.mapPoint.longitude, event.mapPoint.latitude]);
-						string_points += "[" + event.mapPoint.longitude + ", " + event.mapPoint.latitude + "],"
-						copyTextToClipboard(string_points);
-					}
-				})
-			});
-			/* ============================================================ */
+        // Tạo đồ họa từ hình tròn
+        // const circleGraphic = new Graphic({
+        // 	geometry: circle,
+        // 	symbol: {
+        // 		type: "simple-fill",
+        // 		color: [227, 139, 79, 0.8],
+        // 		outline: {
+        // 			color: [255, 255, 255],
+        // 			width: 1
+        // 		}
+        // 	}
+        // });
 
-			/* ============================================================ */
-			const location_1 = new Point({
-				x: -2.199214597876507,
-				y: 53.4838823487394,
-				z: 50
-			});
-			Mesh.createFromGLTF(location_1, "./model/Part1.gltf")
-				.then(function (geometry) {
-					geometry.scale(1000, { 
-						origin: {
-							location_1
-						}
-					});
-					geometry.rotate(0, 0, 90);
-					const graphic = new Graphic({
-						geometry,
-						symbol: {
-							type: "mesh-3d",
-							symbolLayers: [
-								{
-									type: "fill",
-									material: {
-										// color: "rgba(0, 0, 255, 0.5)"
-									},
-									size: 1000
-								}
-							]
-						}
-					});
-					view.graphics.add(graphic);
-				})
-				.catch(console.error);
-		});
-		/* ============================================================ */
+        let listCircle = [];
+        listCoordinates = [[-2.200343404335046, 53.484115151555585]];
+        for (let i = 0; i < 8; i++) {
+          listCircle[i] = new Circle({
+            center: listCoordinates[i],
+            geodesic: true,
+            numberOfPoints: 100,
+            radius: 0.3,
+            radiusUnit: "meters",
+          });
+        }
 
+        const geojsonLayer_B_roof = new GeoJSONLayer({
+          url: "./data/zone_b/zone_b_roof.geojson",
+        });
+        const geojsonLayer_B_wall = new GeoJSONLayer({
+          url: "./data/zone_b/zone_b_wall.geojson",
+        });
 
-		/* ============================================================ */
+        // Zone C
+        const geojsonLayer_C_roof = new GeoJSONLayer({
+          url: "./data/zone_c/zone_c_roof.geojson",
+        });
+        const geojsonLayer_C_wall = new GeoJSONLayer({
+          url: "./data/zone_c/zone_c_wall.geojson",
+        });
+        const geojsonLayer_C_gate = new GeoJSONLayer({
+          url: "./data/zone_c/zone_c_gate.geojson",
+        });
 
-		/* ============================================================ */
-	</script>
-</head>
+        // Zone D
+        const geojsonLayer_D_roof = new GeoJSONLayer({
+          url: "./data/zone_d/zone_d_roof.geojson",
+        });
+        const geojsonLayer_D_wall = new GeoJSONLayer({
+          url: "./data/zone_d/zone_d_wall.geojson",
+        });
 
-<body>
-	<div id="viewDiv"></div>
-</body>
+        //start import pillar ZONE D
+        const geojsonLayer_D_round_pillar_1 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_1.geojson",
+        });
+        const geojsonLayer_D_round_pillar_2 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_2.geojson",
+        });
+        const geojsonLayer_D_round_pillar_3 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_3.geojson",
+        });
+        const geojsonLayer_D_round_pillar_4 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_4.geojson",
+        });
+        const geojsonLayer_D_round_pillar_5 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_5.geojson",
+        });
+        const geojsonLayer_D_round_pillar_6 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_6.geojson",
+        });
+        const geojsonLayer_D_round_pillar_7 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_7.geojson",
+        });
+        const geojsonLayer_D_round_pillar_8 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_8.geojson",
+        });
+        const geojsonLayer_D_round_pillar_9 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_9.geojson",
+        });
+        //end import pillar ZONE D
 
+        // Zone E
+        const geojsonLayer_E_roof = new GeoJSONLayer({
+          url: "./data/zone_e/zone_e_roof.geojson",
+        });
+        const geojsonLayer_E_wall = new GeoJSONLayer({
+          url: "./data/zone_e/zone_e_wall.geojson",
+        });
+
+        geojsonLayer_A_roof.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_A_wall.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+        // render pillar ZONE D
+        geojsonLayer_D_round_pillar_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_4.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_5.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_6.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_7.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_8.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_9.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+
+        // end render pillar ZONE D
+
+        geojsonLayer_C_wall.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_C_gate.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 80.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_wall.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_E_wall.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "blue",
+                },
+              },
+            ],
+          },
+        };
+
+        geojsonLayer.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 100.0,
+                material: {
+                  color: "green",
+                },
+              },
+            ],
+          },
+        };
+
+        const map = new Map({
+          basemap: "topo-vector",
+          ground: "world-elevation",
+          layers: [
+            geojsonLayer,
+            geojsonLayer_A_roof,
+            geojsonLayer_A_wall,
+
+            geojsonLayer_B_roof,
+            geojsonLayer_B_wall,
+            geojsonLayer_D_round_pillar_1,
+            geojsonLayer_D_round_pillar_2,
+            geojsonLayer_D_round_pillar_3,
+            geojsonLayer_D_round_pillar_4,
+            geojsonLayer_D_round_pillar_5,
+            geojsonLayer_D_round_pillar_6,
+            geojsonLayer_D_round_pillar_7,
+            geojsonLayer_D_round_pillar_8,
+            geojsonLayer_D_round_pillar_9,
+
+            geojsonLayer_C_roof,
+            geojsonLayer_C_wall,
+            geojsonLayer_C_gate,
+
+            geojsonLayer_D_roof,
+            geojsonLayer_D_wall,
+
+            geojsonLayer_E_roof,
+            geojsonLayer_E_wall,
+          ],
+        });
+
+        const view = new SceneView({
+          container: "viewDiv",
+          map: map,
+          camera: {
+            position: [-2.1957615021032595, 53.4836002000014, 300],
+            heading: 260,
+            tilt: 50,
+          },
+        });
+
+        for (let i = 0; i < 8; i++) {
+          view.graphics.add(
+            new Graphic({
+              geometry: listCircle[i],
+              symbol: {
+                type: "simple-fill",
+                style: "none",
+                outline: {
+                  width: 3,
+                  color: "red",
+                },
+              },
+            })
+          );
+        }
+
+        view.popup.defaultPopupTemplateEnabled = true;
+        // view.popup.autoOpenEnabled = false;
+        view.on("click", function (event) {
+          // Listen for the click event
+          view.hitTest(event).then(function (hitTestResults) {
+            if (hitTestResults.results) {
+              list_points.push([
+                event.mapPoint.longitude,
+                event.mapPoint.latitude,
+              ]);
+              string_points +=
+                "[" +
+                event.mapPoint.longitude +
+                ", " +
+                event.mapPoint.latitude +
+                "],";
+              copyTextToClipboard(string_points);
+            }
+          });
+        });
+        /* ============================================================ */
+
+        /* ============================================================ */
+        const location_1 = new Point({
+          x: -2.199214597876507,
+          y: 53.4838823487394,
+          z: 50,
+        });
+        Mesh.createFromGLTF(location_1, "./model/Part1.gltf")
+          .then(function (geometry) {
+            geometry.scale(1000, {
+              origin: {
+                location_1,
+              },
+            });
+            geometry.rotate(0, 0, 90);
+            const graphic = new Graphic({
+              geometry,
+              symbol: {
+                type: "mesh-3d",
+                symbolLayers: [
+                  {
+                    type: "fill",
+                    material: {
+                      // color: "rgba(0, 0, 255, 0.5)"
+                    },
+                    size: 1000,
+                  },
+                ],
+              },
+            });
+            view.graphics.add(graphic);
+          })
+          .catch(console.error);
+      });
+      /* ============================================================ */
+
+      /* ============================================================ */
+
+      /* ============================================================ */
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
 </html>
