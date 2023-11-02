@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall Zone B No.3/1",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1989128730060874, 53.483051892841495, 0],
+            [-2.1989123361187315, 53.48305182574037, 0],
+            [-2.198914676076946, 53.483033542960065, 0],
+            [-2.1989152565942587, 53.48303360969071, 0],
+            [-2.1989128730060874, 53.483051892841495, 0]
+          ]
+        ]
+      },
+      "id": "tuong3_1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Vertical Line Wall 3 Zone B No.1",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.198915276797607, 53.48303373725632, 0],
+            [-2.1989146830852997, 53.48303354376478, 0],
+            [-2.198914637052942, 53.483033463614696, 0],
+            [-2.1989154353049645, 53.48303359528413, 0],
+            [-2.198915276797607, 53.48303373725632, 0]
+          ]
+        ]
+      },
+      "id": "vline1"
+    }
+  ]
+}
