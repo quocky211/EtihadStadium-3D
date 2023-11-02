@@ -1,0 +1,25 @@
+{
+    "type": "FeatureCollection",
+    "generator": "smartcity",
+    "copyright": "Smartcity",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Line Wall 3-2 Zone B",
+          "height": 250,
+          "idb": "7"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              
+            ]
+          ]
+        },
+        "id": "line_wall_3_2"
+      }
+    ]
+  }
+  

@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall 7-6 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1990237491024924, 53.48268845638108, 96.3],
+            [-2.198998601831873, 53.482766029282544, 96.8],
+            [-2.198999274230699, 53.48276614288265, 96.8],
+            [-2.199024396108256, 53.482688686192844, 96.3],
+            [-2.1990237491024924, 53.48268845638108, 96.3]
+          ]
+        ]
+      },
+      "id": "line_wall_7_6"
+    }
+  ]
+}
