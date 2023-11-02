@@ -787,7 +787,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 94.8,
+                size: 90.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -836,7 +836,7 @@
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 0.4,
+                  size: 1.5,
                   material: {
                     color: "white",
                   },
@@ -854,7 +854,7 @@
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 101.0,
+                  size: 100.5,
                   material: {
                     color: "#f0f0f0",
                   },
@@ -890,7 +890,7 @@
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 1.5,
+                  size: 2,
                   material: {
                     color: "#c4c4c4",
                   },
@@ -908,9 +908,9 @@
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 0.2,
+                  size: 0.1,
                   material: {
-                    color: "#c4c4c4",
+                    color: "#b2bdc3",
                   },
                 },
               ],
@@ -926,9 +926,9 @@
               symbolLayers: [
                 {
                   type: "extrude",
-                  size: 0.2,
+                  size: 0.1,
                   material: {
-                    color: "blue",
+                    color: "#6b75ba",
                   },
                 },
               ],
@@ -1016,48 +1016,121 @@
 
         // Spiral Stairs
 
-        // Round Columns for Spiral Stairs
-        const roundColumnLayerSpiral = new GraphicsLayer();
-        const roundColumn_point_spiral = [
-          [-2.199214597876507, 53.4838823487394, 50],
-          [-2.1988804312003003, 53.483538189491995, 50],
-          [-2.1987563679243802, 53.48310495815264, 50],
-          [-2.1988623580722795, 53.48271284521822, 50],
-          [-2.201882944520377, 53.48360738298203, 50],
-          [-2.201993023811123, 53.48321004165876, 50],
-          [-2.2018713186867824, 53.48277344024631, 50],
-          [-2.201540077013828, 53.48243117205023, 50],
-        ];
-        const roundColumn_symbol_spiral = {
-          type: "point-3d",
-          symbolLayers: [
-            {
-              type: "object",
-              width: 7,
-              height: 100,
-              resource: {
-                primitive: "cylinder",
-              },
-              material: {
-                color: "red",
-              },
-            },
-          ],
-        };
-        for (const point of roundColumn_point_spiral) {
-          const [x, y, z] = point;
-          const pointLocation = new Point({
-            x: x,
-            y: y,
-            z: z,
-          });
-          const roundColumn_pointGraphic = new Graphic({
-            geometry: pointLocation,
-            symbol: roundColumn_symbol_spiral,
-          });
-          roundColumnLayerSpiral.add(roundColumn_pointGraphic);
-        }
-        /* ----------End Round Columns for Spiral Stairs---------- */
+			// Round1 Columns for Spiral Stairs
+			const roundColumnLayerSpiral_1 = new GraphicsLayer();
+			const roundColumn_point_spiral_1 = [
+				[-2.1989134288304477, 53.48321030822259, 50],
+				[-2.1989284532280275, 53.48326868602463, 50.5],
+				[-2.1989515677235603, 53.4833452467782, 50.5],
+				[-2.1989699488672643, 53.48340923316967, 50],
+				[-2.1990063060707006, 53.483472426687605, 49.5]
+			];
+			const roundColumn_symbol_spiral_1 = {
+				type: "point-3d",
+				symbolLayers: [
+					{
+						type: "object",
+						width: 0.6,
+						height: 50,
+						resource: {
+							primitive: "cylinder",
+						},
+						material: {
+							color: "red",
+						},
+					},
+				],
+			};
+			for (const point of roundColumn_point_spiral_1) {
+				const [x, y, z] = point;
+				const pointLocation = new Point({
+					x: x,
+					y: y,
+					z: z,
+				});
+				const roundColumn_pointGraphic = new Graphic({
+					geometry: pointLocation,
+					symbol: roundColumn_symbol_spiral_1,
+				});
+				roundColumnLayerSpiral_1.add(roundColumn_pointGraphic);
+			}
+			// Round1 Columns for Spiral Stairs
+			const roundColumnLayerSpiral_2 = new GraphicsLayer();
+			const roundColumn_point_spiral_2 = [
+				[-2.1989134288304477, 53.48321030822259, 100],
+				[-2.1989284532280275, 53.48326868602463, 100.5],
+				[-2.1989515677235603, 53.4833452467782, 100.5],
+				[-2.1989699488672643, 53.48340923316967, 100],
+				[-2.1990063060707006, 53.483472426687605, 99.5]
+			];
+			const roundColumn_symbol_spiral_2 = {
+				type: "point-3d",
+				symbolLayers: [
+					{
+						type: "object",
+						width: 0.8,
+						height: 3,
+						resource: {
+							primitive: "cylinder",
+						},
+						material: {
+							color: "red",
+						},
+					},
+				],
+			};
+			for (const point of roundColumn_point_spiral_2) {
+				const [x, y, z] = point;
+				const pointLocation = new Point({
+					x: x,
+					y: y,
+					z: z,
+				});
+				const roundColumn_pointGraphic = new Graphic({
+					geometry: pointLocation,
+					symbol: roundColumn_symbol_spiral_2,
+				});
+				roundColumnLayerSpiral_2.add(roundColumn_pointGraphic);
+			}
+			// colum 3
+			const roundColumnLayerSpiral_3 = new GraphicsLayer();
+			const roundColumn_point_spiral_3 = [
+				[-2.1989134288304477, 53.48321030822259, 103],
+				[-2.1989284532280275, 53.48326868602463, 103.5],
+				[-2.1989515677235603, 53.4833452467782, 103.5],
+				[-2.1989699488672643, 53.48340923316967, 103],
+				[-2.1990063060707006, 53.483472426687605, 102.5]
+			];
+			const roundColumn_symbol_spiral_3 = {
+				type: "point-3d",
+				symbolLayers: [
+					{
+						type: "object",
+						width: 0.3,
+						height: 3,
+						resource: {
+							primitive: "cylinder",
+						},
+						material: {
+							color: "red",
+						},
+					},
+				],
+			};
+			for (const point of roundColumn_point_spiral_3) {
+				const [x, y, z] = point;
+				const pointLocation = new Point({
+					x: x,
+					y: y,
+					z: z,
+				});
+				const roundColumn_pointGraphic = new Graphic({
+					geometry: pointLocation,
+					symbol: roundColumn_symbol_spiral_3,
+				});
+				roundColumnLayerSpiral_3.add(roundColumn_pointGraphic);
+			}
+			/* ----------End Round Columns for Spiral Stairs---------- */
 
         // Polygon banister Layer
         const polygon_banister_Layer = new GraphicsLayer();
@@ -1147,7 +1220,7 @@
             geojsonLayer_E_wall,
           ],
         });
-        // map.addMany([roundColumnLayerSpiral, polygon_banister_Layer]);
+			map.addMany([roundColumnLayerSpiral_1, roundColumnLayerSpiral_2, roundColumnLayerSpiral_3, polygon_banister_Layer]);
 
         const view = new SceneView({
           container: "viewDiv",
@@ -1241,7 +1314,30 @@
       });
       /* ============================================================ */
     </script>
-  </head>
+	</script>
+	<script>
+		const tinhtien = (pointBegin, pointEnd, Arr, z) => {
+			let x = pointEnd[1] - pointBegin[1];
+			let y = pointEnd[0] - pointBegin[0];
+			let completeArr = Arr.map((point) => {
+				return (
+					[point[0] + y, point[1] + x, point[2] - z]
+				)
+			})
+			return completeArr;
+		}
+		console.log(tinhtien(
+			[-2.1989515677235603, 53.4833452467782, 106.5],
+			[-2.198947254690702, 53.48334542020242, 106.5],
+			[
+      [-2.1989284532280275, 53.48326868602463, 106.5],
+            [-2.198933174479815, 53.48328948206941, 106.7],
+            [-2.198945210410978, 53.48332938167357, 106.7],
+			],
+			0
+		));
+	</script>
+</head>
 
   <body>
     <div id="viewDiv"></div>
