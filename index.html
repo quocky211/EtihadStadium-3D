@@ -198,6 +198,28 @@
         });
         //end import pillar ZONE D
 
+        // roof D
+        const geojsonLayer_D_roof_a = new GeoJSONLayer({
+          url: "./data/zone_d/zone_d_roof_a.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.2,
+                  material: {
+                    color: "#c4c4c4",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        // end roof D
+
         // Zone E
         const geojsonLayer_E_roof = new GeoJSONLayer({
           url: "./data/zone_e/zone_e_roof.geojson",
@@ -274,7 +296,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 99.6,
+                size: 99,
                 material: {
                   color: "gray",
                 },
@@ -289,7 +311,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 99.2,
+                size: 98,
                 material: {
                   color: "gray",
                 },
@@ -304,7 +326,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 98.8,
+                size: 97,
                 material: {
                   color: "gray",
                 },
@@ -319,7 +341,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 98.4,
+                size: 96,
                 material: {
                   color: "gray",
                 },
@@ -334,7 +356,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 98,
+                size: 95,
                 material: {
                   color: "gray",
                 },
@@ -349,7 +371,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 97.6,
+                size: 94,
                 material: {
                   color: "gray",
                 },
@@ -364,7 +386,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 97.2,
+                size: 93,
                 material: {
                   color: "gray",
                 },
@@ -379,7 +401,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 96.8,
+                size: 92,
                 material: {
                   color: "gray",
                 },
@@ -477,6 +499,13 @@
 
             geojsonLayer_B_roof,
             geojsonLayer_B_wall,
+
+            geojsonLayer_C_roof,
+            geojsonLayer_C_wall,
+            geojsonLayer_C_gate,
+
+            geojsonLayer_D_roof,
+            geojsonLayer_D_wall,
             geojsonLayer_D_round_pillar_1,
             geojsonLayer_D_round_pillar_2,
             geojsonLayer_D_round_pillar_3,
@@ -486,13 +515,7 @@
             geojsonLayer_D_round_pillar_7,
             geojsonLayer_D_round_pillar_8,
             geojsonLayer_D_round_pillar_9,
-
-            geojsonLayer_C_roof,
-            geojsonLayer_C_wall,
-            geojsonLayer_C_gate,
-
-            geojsonLayer_D_roof,
-            geojsonLayer_D_wall,
+            geojsonLayer_D_roof_a,
 
             geojsonLayer_E_roof,
             geojsonLayer_E_wall,
