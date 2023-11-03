@@ -117,42 +117,7 @@
           }
         });
         // Zone A
-        const geojsonLayer_A_roof = new GeoJSONLayer({
-          url: "./data/zone_a/zone_a_roof.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 100.0,
-                  material: {
-                    color: "blue",
-                  },
-                },
-              ],
-            },
-          },
-        });
-        const geojsonLayer_A_wall = new GeoJSONLayer({
-          url: "./data/zone_a/zone_a_wall.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 100.0,
-                  material: {
-                    color: "blue",
-                  },
-                },
-              ],
-            },
-          },
-        });
+
 
         // Zone B
         let listCircle = [];
@@ -1012,7 +977,7 @@
           },
         });
 
-        
+
 
         // Spiral Stairs
 
@@ -1170,8 +1135,7 @@
           layers: [
             // spiral_stair_floor,
             // spiral_stair_handles,
-            geojsonLayer_A_roof,
-            geojsonLayer_A_wall,
+
             geojsonLayer_B_roof,
             geojsonLayer_B_wall,
             // geojsonLayer_B_wall_1,
