@@ -728,6 +728,10 @@
         url: "./data/zone_b/wall/line_wall_2_1.geojson",
       });
 
+      const geojsonLayer_B_above_line_wall = new GeoJSONLayer({
+        url: "./data/zone_b/wall/above_line_wall.geojson",
+      });
+
 
       const geojsonLayer_B_vline_wall_3_1 = new GeoJSONLayer({
         url: "./data/zone_b/wall/vertical_line_wall_3_1.geojson",
@@ -1047,6 +1051,21 @@
           ],
         },
       };
+      geojsonLayer_B_above_line_wall.renderer = {
+        type: "simple",
+        symbol: {
+          type: "polygon-3d",
+          symbolLayers: [
+            {
+              type: "extrude",
+              size: 1.5,
+              material: {
+                color: "white",
+              },
+            },
+          ],
+        },
+      };
       geojsonLayer_B_vline_wall_3_1.renderer = {
         type: "simple",
         symbol: {
@@ -1145,7 +1164,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -1190,7 +1209,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -1235,7 +1254,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -1280,7 +1299,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -1325,7 +1344,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -1370,7 +1389,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -1415,7 +1434,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 2.45,
+              size: 3.0,
               material: {
                 color: "#4b4a46",
               },
@@ -2029,6 +2048,8 @@
           geojsonLayer_B_line_wall_3_2,
           geojsonLayer_B_line_wall_2_1,
 
+          geojsonLayer_B_above_line_wall,
+
           geojsonLayer_C_top,
           geojsonLayer_C_wall,
           geojsonLayer_C_curve,
@@ -2161,12 +2182,12 @@
       return completeArr;
     }
     console.log(tinhtien(
-      [-2.1989515677235603, 53.4833452467782, 106.5],
-      [-2.198947254690702, 53.48334542020242, 106.5],
+      [-2.199105707169946, 53.482600174869525, 97.5],
+      [-2.1991013941370876, 53.482600348293744, 97.5],
       [
-        [-2.1989284532280275, 53.48326868602463, 106.5],
-        [-2.198933174479815, 53.48328948206941, 106.7],
-        [-2.198945210410978, 53.48332938167357, 106.7],
+        [-2.19912314908112, 53.48258291939618, 96.833],
+        [-2.1991417781161036, 53.48256400151086, 96.167],
+        [-2.1991604404848353, 53.482544041190295, 95.5]
       ],
       0
     ));
