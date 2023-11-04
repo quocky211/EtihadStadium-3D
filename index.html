@@ -165,13 +165,27 @@
           [-2.198997676338993, 53.48276871716416],
           [-2.199026224679031, 53.48268622834205],
           [-2.199105707169946, 53.482600174869525],
+
+          //ve duong line tren dinh
+          [-2.1989093654864957, 53.48313083882407],
+            [-2.1989086354622165, 53.48310734452091],
+            [-2.198908284662605, 53.483081130133016],
+          [-2.1989159917644234, 53.48302202595729],
+          [-2.1989280428283786, 53.48295129300959],
+          [-2.1989428196489946, 53.48289432848577],
+          [-2.1989800348309814, 53.48280273337249],
+            [-2.1989685379102184, 53.48282601003531],
+          [-2.199070243063876, 53.482635693107405],
+          [-2.199141185425004, 53.48256380850212],
+            [-2.1991225492887625, 53.48258265032541],
+          
         ];
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 19; i++) {
           listCircle[i] = new Circle({
             center: listCoordinates[i],
             geodesic: true,
             numberOfPoints: 100,
-            radius: 0.4,
+            radius: 0.15,
             radiusUnit: "meters",
           });
         }
@@ -214,14 +228,32 @@
         const geojsonLayer_B_wall_1 = new GeoJSONLayer({
           url: "./data/zone_b/wall/wall_1.geojson",
         });
-        const geojsonLayer_B_wall_3_1 = new GeoJSONLayer({
-          url: "./data/zone_b/wall/wall_3_1.geojson",
+        const geojsonLayer_B_wall_2 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_2.geojson",
         });
-        const geojsonLayer_B_wall_3_2 = new GeoJSONLayer({
-          url: "./data/zone_b/wall/wall_3_2.geojson",
+        const geojsonLayer_B_wall_3 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_3.geojson",
         });
-        const geojsonLayer_B_wall_3_3 = new GeoJSONLayer({
-          url: "./data/zone_b/wall/wall_3_3.geojson",
+        const geojsonLayer_B_wall_4 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_4.geojson",
+        });
+        const geojsonLayer_B_wall_5 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_5.geojson",
+        });
+        const geojsonLayer_B_wall_6 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_6.geojson",
+        });
+        const geojsonLayer_B_wall_7 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_7.geojson",
+        });
+        const geojsonLayer_B_wall_8 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/wall_8.geojson",
+        });
+        
+
+
+        const geojsonLayer_B_line_wall_ZoneA_8 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/line_wall_zoneA_8.geojson",
         });
         const geojsonLayer_B_line_wall_8_7 = new GeoJSONLayer({
           url: "./data/zone_b/wall/line_wall_8_7.geojson",
@@ -238,6 +270,14 @@
         const geojsonLayer_B_line_wall_4_3 = new GeoJSONLayer({
           url: "./data/zone_b/wall/line_wall_4_3.geojson",
         });
+        const geojsonLayer_B_line_wall_3_2 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/line_wall_3_2.geojson",
+        });
+        const geojsonLayer_B_line_wall_2_1 = new GeoJSONLayer({
+          url: "./data/zone_b/wall/line_wall_2_1.geojson",
+        });
+
+
         const geojsonLayer_B_vline_wall_3_1 = new GeoJSONLayer({
           url: "./data/zone_b/wall/vertical_line_wall_3_1.geojson",
         });
@@ -321,54 +361,131 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 100.0,
+                size: 99.5,
                 material: {
-                  color: "#647a88",
+                  color: "#f0f0f0",
                 },
               },
             ],
           },
         };
-        geojsonLayer_B_wall_3_1.renderer = {
+        geojsonLayer_B_wall_2.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
             symbolLayers: [
               {
                 type: "extrude",
-                size: 100.0,
+                size: 98.5,
                 material: {
-                  color: "#647a88",
+                  color: "#f0f0f0",
                 },
               },
             ],
           },
         };
-        geojsonLayer_B_wall_3_2.renderer = {
+        geojsonLayer_B_wall_3.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
             symbolLayers: [
               {
                 type: "extrude",
-                size: 100.0,
+                size: 97.5,
                 material: {
-                  color: "#647a88",
+                  color: "#f0f0f0",
                 },
               },
             ],
           },
         };
-        geojsonLayer_B_wall_3_3.renderer = {
+        geojsonLayer_B_wall_4.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
             symbolLayers: [
               {
                 type: "extrude",
-                size: 100.0,
+                size: 96.5,
                 material: {
-                  color: "#647a88",
+                  color: "#f0f0f0",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_5.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 95.5,
+                material: {
+                  color: "#f0f0f0",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_6.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 94.5,
+                material: {
+                  color: "#f0f0f0",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_7.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 92.5,
+                material: {
+                  color: "#f0f0f0",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_8.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 90.5,
+                material: {
+                  color: "#f0f0f0",
+                },
+              },
+            ],
+          },
+        };
+        
+
+        geojsonLayer_B_line_wall_ZoneA_8.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 2.0,
+                material: {
+                  color: "#c4c4c4",
                 },
               },
             ],
@@ -383,7 +500,7 @@
                 type: "extrude",
                 size: 2.0,
                 material: {
-                  color: "#9e9e9f",
+                  color: "#c4c4c4",
                 },
               },
             ],
@@ -398,7 +515,7 @@
                 type: "extrude",
                 size: 2.0,
                 material: {
-                  color: "#9e9e9f",
+                  color: "#c4c4c4",
                 },
               },
             ],
@@ -413,7 +530,7 @@
                 type: "extrude",
                 size: 2.0,
                 material: {
-                  color: "#9e9e9f",
+                  color: "#c4c4c4",
                 },
               },
             ],
@@ -428,7 +545,7 @@
                 type: "extrude",
                 size: 2.0,
                 material: {
-                  color: "#9e9e9f",
+                  color: "#c4c4c4",
                 },
               },
             ],
@@ -443,7 +560,37 @@
                 type: "extrude",
                 size: 2.0,
                 material: {
-                  color: "#9e9e9f",
+                  color: "#c4c4c4",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_line_wall_3_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 2.0,
+                material: {
+                  color: "#c4c4c4",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_line_wall_2_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 2.0,
+                material: {
+                  color: "#c4c4c4",
                 },
               },
             ],
@@ -472,7 +619,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 98.3,
+                size: 99.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -502,7 +649,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 2.45,
+                size: 3.0,
                 material: {
                   color: "#4b4a46",
                 },
@@ -517,7 +664,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 97.8,
+                size: 98.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -562,7 +709,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 97.3,
+                size: 97.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -607,7 +754,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 96.8,
+                size: 96.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -652,7 +799,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 96.3,
+                size: 95.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -697,7 +844,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 95.8,
+                size: 94.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -742,7 +889,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 95.3,
+                size: 93.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -787,7 +934,7 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 90.5,
+                size: 91.5,
                 material: {
                   color: "#4b4a46",
                 },
@@ -1172,13 +1319,18 @@
             // spiral_stair_handles,
             geojsonLayer_A_roof,
             geojsonLayer_A_wall,
+            
             geojsonLayer_B_roof,
             geojsonLayer_B_wall,
-            // geojsonLayer_B_wall_1,
-            // geojsonLayer_B_wall_3_1,
-            // geojsonLayer_B_wall_3_2,
-            // geojsonLayer_B_wall_3_3,
-            // geojsonLayer_B_vline_wall_3_1,
+            geojsonLayer_B_wall_1,
+            geojsonLayer_B_wall_2,
+            geojsonLayer_B_wall_3,
+            geojsonLayer_B_wall_4,
+            geojsonLayer_B_wall_5,
+            geojsonLayer_B_wall_6,
+            geojsonLayer_B_wall_7,
+            geojsonLayer_B_wall_8,
+            
             geojsonLayer_B_round_pillar_1_1,
             geojsonLayer_B_round_pillar_1_2,
             geojsonLayer_B_round_pillar_1_3,
@@ -1203,11 +1355,16 @@
             geojsonLayer_B_round_pillar_8_1,
             geojsonLayer_B_round_pillar_8_2,
             geojsonLayer_B_round_pillar_8_3,
+
+            geojsonLayer_B_line_wall_ZoneA_8,
             geojsonLayer_B_line_wall_8_7,
             geojsonLayer_B_line_wall_7_6,
             geojsonLayer_B_line_wall_6_5,
             geojsonLayer_B_line_wall_5_4,
             geojsonLayer_B_line_wall_4_3,
+            geojsonLayer_B_line_wall_3_2,
+            geojsonLayer_B_line_wall_2_1,
+            
             geojsonLayer_C_top,
             geojsonLayer_C_wall,
             geojsonLayer_C_curve,
@@ -1232,7 +1389,7 @@
           },
         });
 
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 19; i++) {
           view.graphics.add(
             new Graphic({
               geometry: listCircle[i],

@@ -1,25 +1,30 @@
 {
-    "type": "FeatureCollection",
-    "generator": "smartcity",
-    "copyright": "Smartcity",
-    "features": [
-      {
-        "type": "Feature",
-        "properties": {
-          "Building name": "Line Wall 3-2 Zone B",
-          "height": 250,
-          "idb": "7"
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              
-            ]
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall 3-2 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1989200099080657, 53.48299154109723, 98.5],
+            [-2.1989159917644234, 53.48302202595729, 99.0],
+            [-2.1989124361869314, 53.483051829882235, 99.45],
+            [-2.1989128988530022, 53.48305172139504, 99.45],
+            [-2.1989166935736195, 53.48302200759791, 99.0],
+            [-2.198920556422205, 53.48299148937955, 98.5],
+            [-2.1989200099080657, 53.48299154109723, 98.5]
           ]
-        },
-        "id": "line_wall_3_2"
-      }
-    ]
-  }
-  
+        ]
+      },
+      "id": "line_wall_3_2"
+    }
+  ]
+}
