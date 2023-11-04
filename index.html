@@ -1462,6 +1462,24 @@
           },
         },
       });
+      const geojsonLayer_C_column_roof = new GeoJSONLayer({
+        url: "./data/zone_c/zone_c_column_roof.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 1.5,
+                material: {
+                  color: "white",
+                },
+              },
+            ],
+          },
+        },
+      });
       const geojsonLayer_C_wall = new GeoJSONLayer({
         url: "./data/zone_c/zone_c_wall.geojson",
         renderer: {
@@ -1473,7 +1491,7 @@
                 type: "extrude",
                 size: 100.5,
                 material: {
-                  color: "#f0f0f0",
+                  color: "#d3d3d3",
                 },
               },
             ],
@@ -1489,9 +1507,27 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 80.0,
+                size: 85.0,
                 material: {
                   color: "blue",
+                },
+              },
+            ],
+          },
+        },
+      });
+      const geojsonLayer_C_sub_gate = new GeoJSONLayer({
+        url: "./data/zone_c/zone_c_sub_gate.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 1,
+                material: {
+                  color: "white",
                 },
               },
             ],
@@ -1509,7 +1545,7 @@
                 type: "extrude",
                 size: 2,
                 material: {
-                  color: "#c4c4c4",
+                  color: "white",
                 },
               },
             ],
@@ -1545,7 +1581,7 @@
                 type: "extrude",
                 size: 0.1,
                 material: {
-                  color: "#b2bdc3",
+                  color: "#F0f0f0",
                 },
               },
             ],
@@ -1563,7 +1599,7 @@
                 type: "extrude",
                 size: 0.1,
                 material: {
-                  color: "#6b75ba",
+                  color: "#B0C4DE",
                 },
               },
             ],
@@ -1860,7 +1896,7 @@
               primitive: "cylinder",
             },
             material: {
-              color: "red",
+              color: "#f5f5f5",
             },
           },
         ],
@@ -1898,7 +1934,7 @@
               primitive: "cylinder",
             },
             material: {
-              color: "red",
+              color: "#f5f5f5",
             },
           },
         ],
@@ -1936,7 +1972,7 @@
               primitive: "cylinder",
             },
             material: {
-              color: "red",
+              color: "#f5f5f5",
             },
           },
         ],
@@ -1953,6 +1989,42 @@
           symbol: roundColumn_symbol_spiral_3,
         });
         roundColumnLayerSpiral_3.add(roundColumn_pointGraphic);
+      }
+      // sub gate
+
+      const roundColumnLayerSpiral_4 = new GraphicsLayer();
+      const roundColumn_point_spiral_4 = [
+      [-2.1988115574254468, 53.4832574128927, 50],
+        [-2.198851270532178, 53.48338621249916, 50]
+      ];
+      const roundColumn_symbol_spiral_4 = {
+        type: "point-3d",
+        symbolLayers: [
+          {
+            type: "object",
+            width: 0.6,
+            height: 24,
+            resource: {
+              primitive: "cylinder",
+            },
+            material: {
+              color: "#f5f5f5",
+            },
+          },
+        ],
+      };
+      for (const point of roundColumn_point_spiral_4) {
+        const [x, y, z] = point;
+        const pointLocation = new Point({
+          x: x,
+          y: y,
+          z: z,
+        });
+        const roundColumn_pointGraphic = new Graphic({
+          geometry: pointLocation,
+          symbol: roundColumn_symbol_spiral_4,
+        });
+        roundColumnLayerSpiral_4.add(roundColumn_pointGraphic);
       }
       /* ----------End Round Columns for Spiral Stairs---------- */
 
@@ -2069,12 +2141,14 @@
           geojsonLayer_B_above_line_wall,
 
           geojsonLayer_C_top,
+          geojsonLayer_C_column_roof,
           geojsonLayer_C_wall,
           geojsonLayer_C_curve,
           geojsonLayer_C_between_roof,
           geojsonLayer_C_roof_a,
           geojsonLayer_C_roof_b,
           geojsonLayer_C_gate,
+          geojsonLayer_C_sub_gate,
 
           geojsonLayer_D_wall,
           geojsonLayer_D_round_pillar_1,
@@ -2094,7 +2168,7 @@
           geojsonLayer_E_wall,
         ],
       });
-      map.addMany([roundColumnLayerSpiral_1, roundColumnLayerSpiral_2, roundColumnLayerSpiral_3, polygon_banister_Layer]);
+      map.addMany([roundColumnLayerSpiral_1, roundColumnLayerSpiral_2, roundColumnLayerSpiral_3, roundColumnLayerSpiral_4, polygon_banister_Layer]);
 
       const view = new SceneView({
         container: "viewDiv",
@@ -2201,13 +2275,12 @@
       return completeArr;
     }
     console.log(tinhtien(
-      [-2.1989699488672643, 53.48340923316967, 103],
-      [-2.1990204151802994, 53.48340662750154, 107.1],
+      [-2.198816336182937, 53.483247194729685, 74],
+      [-2.1986495451207215, 53.4832634668977, 74],
       [
-      	[-2.198991197621602, 53.48344580514463, 102.75],
-        [-2.1990063060707006, 53.483472426687605, 102.5],
+        [-2.1988614316985, 53.48339549052389, 74],
       ],
-      -4.1
+      0
     ));
   </script>
 </head>

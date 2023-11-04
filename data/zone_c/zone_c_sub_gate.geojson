@@ -1,0 +1,28 @@
+{
+    "type": "FeatureCollection",
+    "generator": "smartcity",
+    "copyright": "Smartcity",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Top C",
+          "height": 250,
+          "idb": "7"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+                [-2.1988614316985, 53.48339549052389, 74],
+                [-2.198816336182937, 53.483247194729685, 74],
+                [-2.1986495451207215, 53.4832634668977, 74],
+                [-2.1986946406362846, 53.4834117626919, 74]
+            ]
+          ]
+        },
+        "id": "sub_gate1"
+      }
+    ]
+  }
+  
