@@ -1535,9 +1535,81 @@
       });
 
       // Zone D
-      const geojsonLayer_D_roof = new GeoJSONLayer({
-        url: "./data/zone_d/zone_d_roof.geojson",
-        renderer: {
+        const geojsonLayer_D_roof = new GeoJSONLayer({
+          url: "./data/zone_d/zone_d_roof.geojson",
+        });
+        const geojsonLayer_D_wall = new GeoJSONLayer({
+          url: "./data/zone_d/zone_d_wall.geojson",
+        });
+
+        const zone_D_columns_sub_2 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/zone_d_columns_sub_2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 3.0,
+                  material: {
+                    color: "#f5f5f5",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const zone_D_columns_sub_3 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/zone_d_columns_sub_3.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 3.0,
+                  material: {
+                    color: "#f5f5f5",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        //start import pillar ZONE D
+        const geojsonLayer_D_round_pillar_1 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_1.geojson",
+        });
+        const geojsonLayer_D_round_pillar_2 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_2.geojson",
+        });
+        const geojsonLayer_D_round_pillar_3 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_3.geojson",
+        });
+        const geojsonLayer_D_round_pillar_4 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_4.geojson",
+        });
+        const geojsonLayer_D_round_pillar_5 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_5.geojson",
+        });
+        const geojsonLayer_D_round_pillar_6 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_6.geojson",
+        });
+        const geojsonLayer_D_round_pillar_7 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_7.geojson",
+        });
+        const geojsonLayer_D_round_pillar_8 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_8.geojson",
+        });
+        const geojsonLayer_D_round_pillar_9 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/round_pillar_9.geojson",
+        });
+        //end import pillar ZONE D
+               // render pillar ZONE D
+               geojsonLayer_D_round_pillar_1.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
@@ -1546,16 +1618,133 @@
                 type: "extrude",
                 size: 100.0,
                 material: {
-                  color: "blue",
+                  color: "gray",
                 },
               },
             ],
           },
-        },
-      });
-      const geojsonLayer_D_wall = new GeoJSONLayer({
-        url: "./data/zone_d/zone_d_wall.geojson",
-        renderer: {
+        };
+        geojsonLayer_D_round_pillar_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 99,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 98,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_4.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 97,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_5.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 96,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_6.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 95,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_7.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 94,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_8.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 93,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_round_pillar_9.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 92,
+                material: {
+                  color: "gray",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_D_wall.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
@@ -1564,13 +1753,13 @@
                 type: "extrude",
                 size: 100.0,
                 material: {
-                  color: "blue",
+                  color: "#ddd",
                 },
               },
             ],
           },
-        },
-      });
+        };
+        // end render pillar ZONE D
 
       // Zone E
       const geojsonLayer_E_roof = new GeoJSONLayer({
@@ -1846,8 +2035,21 @@
           geojsonLayer_C_roof_a,
           geojsonLayer_C_roof_b,
           geojsonLayer_C_gate,
-          geojsonLayer_D_roof,
+
           geojsonLayer_D_wall,
+          geojsonLayer_D_round_pillar_1,
+          geojsonLayer_D_round_pillar_2,
+          geojsonLayer_D_round_pillar_3,
+          geojsonLayer_D_round_pillar_4,
+          geojsonLayer_D_round_pillar_5,
+          geojsonLayer_D_round_pillar_6,
+          geojsonLayer_D_round_pillar_7,
+          geojsonLayer_D_round_pillar_8,
+          geojsonLayer_D_round_pillar_9,
+          zone_D_columns_sub_2,
+          zone_D_columns_sub_3,
+
+
           geojsonLayer_E_roof,
           geojsonLayer_E_wall,
         ],
