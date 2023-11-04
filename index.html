@@ -1534,6 +1534,24 @@
           },
         },
       });
+      const geojsonLayer_C_sub_gate_1 = new GeoJSONLayer({
+        url: "./data/zone_c/zone_c_sub_gate_1.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 1,
+                material: {
+                  color: "white",
+                },
+              },
+            ],
+          },
+        },
+      });
       const geojsonLayer_C_curve = new GeoJSONLayer({
         url: "./data/zone_c/zone_c_curve.geojson",
         renderer: {
@@ -2149,6 +2167,7 @@
           geojsonLayer_C_roof_b,
           geojsonLayer_C_gate,
           geojsonLayer_C_sub_gate,
+          geojsonLayer_C_sub_gate_1,
 
           geojsonLayer_D_wall,
           geojsonLayer_D_round_pillar_1,
@@ -2275,12 +2294,13 @@
       return completeArr;
     }
     console.log(tinhtien(
-      [-2.198816336182937, 53.483247194729685, 74],
-      [-2.1986495451207215, 53.4832634668977, 74],
+      [-2.198810161685199, 53.48325479575517, 70],
+      [-2.198761885821056, 53.4832574329215, 74],
       [
-        [-2.1988614316985, 53.48339549052389, 74],
+      [-2.198849521729203, 53.48338369796569, 70],
+      [-2.1988512481938214, 53.48338890676609, 70],
       ],
-      0
+      -4
     ));
   </script>
 </head>
