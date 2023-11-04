@@ -131,13 +131,23 @@
         // });
 
         let listCircle = [];
-        listCoordinates = [[-2.200343404335046, 53.484115151555585]];
+        listCoordinates = [
+          // [-2.19928809026152, 53.483784334242635],
+          [-2.199390284464628, 53.483860121558465],
+          [-2.1994898310442768, 53.483913124935405],
+          [-2.199624189078754, 53.483970610557776],
+          [-2.1997570203066314, 53.48401598061354],
+          [-2.199902574988126, 53.48405691641692],
+          [-2.200048168824151, 53.4840865156586],
+          [-2.200192319211402, 53.48410513620782],
+          [-2.200343404335046, 53.484115151555585],
+        ];
         for (let i = 0; i < 8; i++) {
           listCircle[i] = new Circle({
             center: listCoordinates[i],
             geodesic: true,
             numberOfPoints: 100,
-            radius: 0.3,
+            radius: 0.15,
             radiusUnit: "meters",
           });
         }
@@ -166,6 +176,43 @@
         });
         const geojsonLayer_D_wall = new GeoJSONLayer({
           url: "./data/zone_d/zone_d_wall.geojson",
+        });
+
+        const zone_D_columns_sub_2 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/zone_d_columns_sub_2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 3.0,
+                  material: {
+                    color: "#f5f5f5",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const zone_D_columns_sub_3 = new GeoJSONLayer({
+          url: "./data/zone_d/round_pillar/zone_d_columns_sub_3.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 3.0,
+                  material: {
+                    color: "#f5f5f5",
+                  },
+                },
+              ],
+            },
+          },
         });
 
         //start import pillar ZONE D
@@ -211,6 +258,25 @@
                   size: 0.2,
                   material: {
                     color: "#c4c4c4",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const geojsonLayer_D_roof_b = new GeoJSONLayer({
+          url: "./data/zone_d/zone_d_roof_b.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.2,
+                  material: {
+                    color: "blue",
                   },
                 },
               ],
@@ -504,7 +570,7 @@
             geojsonLayer_C_wall,
             geojsonLayer_C_gate,
 
-            geojsonLayer_D_roof,
+            // geojsonLayer_D_roof,
             geojsonLayer_D_wall,
             geojsonLayer_D_round_pillar_1,
             geojsonLayer_D_round_pillar_2,
@@ -515,7 +581,11 @@
             geojsonLayer_D_round_pillar_7,
             geojsonLayer_D_round_pillar_8,
             geojsonLayer_D_round_pillar_9,
-            geojsonLayer_D_roof_a,
+            zone_D_columns_sub_2,
+            zone_D_columns_sub_3,
+
+            // geojsonLayer_D_roof_a,
+            // geojsonLayer_D_roof_b,
 
             geojsonLayer_E_roof,
             geojsonLayer_E_wall,
