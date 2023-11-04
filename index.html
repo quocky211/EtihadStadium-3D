@@ -1516,6 +1516,24 @@
           },
         },
       });
+      const geojsonLayer_C_between_roof = new GeoJSONLayer({
+        url: "./data/zone_c/zone_c_between_roof.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 0.05,
+                material: {
+                  color: "#87CEFA",
+                },
+              },
+            ],
+          },
+        },
+      });
       const geojsonLayer_C_roof_a = new GeoJSONLayer({
         url: "./data/zone_c/zone_c_roof_a.geojson",
         renderer: {
@@ -2053,6 +2071,7 @@
           geojsonLayer_C_top,
           geojsonLayer_C_wall,
           geojsonLayer_C_curve,
+          geojsonLayer_C_between_roof,
           geojsonLayer_C_roof_a,
           geojsonLayer_C_roof_b,
           geojsonLayer_C_gate,
@@ -2182,14 +2201,13 @@
       return completeArr;
     }
     console.log(tinhtien(
-      [-2.199105707169946, 53.482600174869525, 97.5],
-      [-2.1991013941370876, 53.482600348293744, 97.5],
+      [-2.1989699488672643, 53.48340923316967, 103],
+      [-2.1990204151802994, 53.48340662750154, 107.1],
       [
-        [-2.19912314908112, 53.48258291939618, 96.833],
-        [-2.1991417781161036, 53.48256400151086, 96.167],
-        [-2.1991604404848353, 53.482544041190295, 95.5]
+      	[-2.198991197621602, 53.48344580514463, 102.75],
+        [-2.1990063060707006, 53.483472426687605, 102.5],
       ],
-      0
+      -4.1
     ));
   </script>
 </head>
