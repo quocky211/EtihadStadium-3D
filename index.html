@@ -732,10 +732,14 @@
         url: "./data/zone_b/wall/above_line_wall.geojson",
       });
 
-
-      const geojsonLayer_B_vline_wall_3_1 = new GeoJSONLayer({
-        url: "./data/zone_b/wall/vertical_line_wall_3_1.geojson",
+      const geojsonLayer_B_line_between_wall_roof = new GeoJSONLayer({
+        url: "./data/zone_b/wall/line_between_wall_roof.geojson",
       });
+
+
+      // const geojsonLayer_B_vline_wall_3_1 = new GeoJSONLayer({
+      //   url: "./data/zone_b/wall/vertical_line_wall_3_1.geojson",
+      // });
       const geojsonLayer_B_round_pillar_1_1 = new GeoJSONLayer({
         url: "./data/zone_b/round_pillar/round_pillar_1_1.geojson",
       });
@@ -818,7 +822,7 @@
               type: "extrude",
               size: 99.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -833,7 +837,7 @@
               type: "extrude",
               size: 98.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -848,7 +852,7 @@
               type: "extrude",
               size: 97.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -863,7 +867,7 @@
               type: "extrude",
               size: 96.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -878,7 +882,7 @@
               type: "extrude",
               size: 95.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -893,7 +897,7 @@
               type: "extrude",
               size: 94.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -908,7 +912,7 @@
               type: "extrude",
               size: 92.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -923,7 +927,7 @@
               type: "extrude",
               size: 90.5,
               material: {
-                color: "#f0f0f0",
+                color: "#d3d3d3",
               },
             },
           ],
@@ -940,7 +944,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -955,7 +959,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -970,7 +974,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -985,7 +989,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -1000,7 +1004,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -1015,7 +1019,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -1030,7 +1034,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -1045,7 +1049,7 @@
               type: "extrude",
               size: 2.0,
               material: {
-                color: "#c4c4c4",
+                color: "white",
               },
             },
           ],
@@ -1066,21 +1070,36 @@
           ],
         },
       };
-      geojsonLayer_B_vline_wall_3_1.renderer = {
+      geojsonLayer_B_line_between_wall_roof.renderer = {
         type: "simple",
         symbol: {
           type: "polygon-3d",
           symbolLayers: [
             {
               type: "extrude",
-              size: 100.0,
+              size: 0.05,
               material: {
-                color: "black",
+                color: "#87CEFA",
               },
             },
           ],
         },
       };
+      // geojsonLayer_B_vline_wall_3_1.renderer = {
+      //   type: "simple",
+      //   symbol: {
+      //     type: "polygon-3d",
+      //     symbolLayers: [
+      //       {
+      //         type: "extrude",
+      //         size: 100.0,
+      //         material: {
+      //           color: "black",
+      //         },
+      //       },
+      //     ],
+      //   },
+      // };
 
       geojsonLayer_B_round_pillar_1_1.renderer = {
         type: "simple",
@@ -1091,7 +1110,7 @@
               type: "extrude",
               size: 99.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1106,7 +1125,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1121,7 +1140,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1136,7 +1155,7 @@
               type: "extrude",
               size: 98.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1151,7 +1170,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1166,7 +1185,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1181,7 +1200,7 @@
               type: "extrude",
               size: 97.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1196,7 +1215,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1211,7 +1230,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1226,7 +1245,7 @@
               type: "extrude",
               size: 96.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1241,7 +1260,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1256,7 +1275,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1271,7 +1290,7 @@
               type: "extrude",
               size: 95.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1286,7 +1305,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1301,7 +1320,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1316,7 +1335,7 @@
               type: "extrude",
               size: 94.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1331,7 +1350,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1346,7 +1365,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1361,7 +1380,7 @@
               type: "extrude",
               size: 93.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1376,7 +1395,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1391,7 +1410,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1406,7 +1425,7 @@
               type: "extrude",
               size: 91.5,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1421,7 +1440,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -1436,7 +1455,7 @@
               type: "extrude",
               size: 3.0,
               material: {
-                color: "#4b4a46",
+                color: "#f5f5f5",
               },
             },
           ],
@@ -2094,7 +2113,7 @@
           zone_a_wall8,
           zone_a_wall9,
           geojsonLayer_B_roof,
-          geojsonLayer_B_wall,
+          
           geojsonLayer_B_wall_1,
           geojsonLayer_B_wall_2,
           geojsonLayer_B_wall_3,
@@ -2139,6 +2158,7 @@
           geojsonLayer_B_line_wall_2_1,
 
           geojsonLayer_B_above_line_wall,
+          geojsonLayer_B_line_between_wall_roof,
 
           geojsonLayer_C_top,
           geojsonLayer_C_column_roof,
@@ -2275,10 +2295,12 @@
       return completeArr;
     }
     console.log(tinhtien(
-      [-2.198816336182937, 53.483247194729685, 74],
-      [-2.1986495451207215, 53.4832634668977, 74],
+      [-2.199105707169946, 53.482600174869525, 94.4],
+              [-2.199156173482981, 53.482597569201396, 98.5],
       [
-        [-2.1988614316985, 53.48339549052389, 74],
+      [-2.19912314908112, 53.48258291939618, 93.833],
+            [-2.1991417781161036, 53.48256400151086, 93.167],
+            [-2.1991604404848353, 53.482544041190295, 92.5],
       ],
       0
     ));
