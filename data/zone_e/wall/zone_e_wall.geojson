@@ -1,0 +1,102 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall E",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.199006554434688, 53.48347511434599, 2.5],
+            [-2.1990297283715323, 53.48351123591294, 2.25],
+            [-2.199049357189952, 53.48353668359315, 2]
+          ]
+        ]
+      },
+      "id": "toa1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall E",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.199049357189952, 53.48353668359315, 2],
+            [-2.199074894169114, 53.48357731693126, 1.75],
+            [-2.1990995017938135, 53.48361052897234, 1.5]
+          ]
+        ]
+      },
+      "id": "toa2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall E",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1990995017938135, 53.48361052897234, 1.5],
+            [-2.199131353141366, 53.48364623400063, 1.25],
+            [-2.199157671197127, 53.483677633588776, 1]
+          ]
+        ]
+      },
+      "id": "toa3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall E",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.199157671197127, 53.483677633588776, 1],
+            [-2.1991914306486864, 53.48370806787392, 0.75],
+            [-2.1992171476289837, 53.48373440724222, 0.5]
+          ]
+        ]
+      },
+      "id": "toa4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall E",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.1992171476289837, 53.48373440724222, 0.5],
+            [-2.199255625240075, 53.48376152315329, 1.25],
+            [-2.1992839723808473, 53.48378259283, 0]
+          ]
+        ]
+      },
+      "id": "toa5"
+    }
+  ]
+}
