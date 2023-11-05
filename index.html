@@ -633,8 +633,25 @@
         [-2.199141185425004, 53.48256380850212],
         [-2.1991225492887625, 53.48258265032541],
 
+        //ve vom
+        // [-2.1990620918335892, 53.483048280439284],[-2.1992078394087327, 53.48304118709831],[-2.1993577642747515, 53.483033130359324],[-2.199506027715405, 53.48302442130918],[-2.1996579580015543, 53.48301765088476],
+        // [-2.199070774124489, 53.4829822445727],[-2.1992227895861114, 53.48297337716272],[-2.1993756473669546, 53.48296590697185],[-2.1995332480748955, 53.48295679539747],[-2.1996488472914177, 53.482951660803934],
+        // [-2.1991030907319375, 53.48290799772683],[-2.199272547017834, 53.48289715735259],[-2.1994433963403446, 53.48288707743613],[-2.199636699374087, 53.48287613815873],
+        // [-2.199106057552913, 53.482835882855326],[-2.1992501258451385, 53.48282618926218],[-2.1994719508164597, 53.48281229129456],[-2.199620788272136, 53.482802258826865],
+        // [-2.199133922226696, 53.48276118324451],[-2.199272732236314, 53.482752519764574],[-2.1994680477918185, 53.4827380650805],[-2.1996185807913986, 53.482729019282274],
+        // [-2.199156456112501, 53.482692661823855],[-2.19928949709079, 53.48269895970782],[-2.1994259201798516, 53.48270402422212],[-2.1994951666039357, 53.482707916267934],
+
+        [-2.1995998491598097, 53.48272345830218],[-2.199600012136676, 53.4827189204914],[-2.19957620585432, 53.482713138380184],
+        
+        [-2.1995992786151923, 53.482730790777644],
+        [-2.1996079155423707, 53.48280374994954],
+        [-2.199624674377583, 53.482877002445],
+
+        //vom con 1
+        [-2.1994014992999844, 53.48267341818469],[-2.199414930834797, 53.4826506883165],
+        [-2.1993977698193743, 53.48271059441009],
       ];
-      for (let i = 0; i < 19; i++) {
+      for (let i = 0; i < 1000; i++) {
         listCircle[i] = new Circle({
           center: listCoordinates[i],
           geodesic: true,
@@ -655,6 +672,60 @@
                 size: 100.0,
                 material: {
                   color: "blue",
+                },
+              },
+            ],
+          },
+        },
+      });
+      const geojsonLayer_B_roof_column = new GeoJSONLayer({
+        url: "./data/zone_b/roof/roof_column.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 1.5,
+                material: {
+                  color: "white",
+                },
+              },
+            ],
+          },
+        },
+      });
+      const geojsonLayer_B_roof_sub_1 = new GeoJSONLayer({
+        url: "./data/zone_b/roof/roof_sub_1.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 0.1,
+                material: {
+                  color: "#F0f0f0",
+                },
+              },
+            ],
+          },
+        },
+      });
+      const geojsonLayer_B_roof_sub_2 = new GeoJSONLayer({
+        url: "./data/zone_b/roof/roof_sub_2.geojson",
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 0.1,
+                material: {
+                  color: "#B0C4DE",
                 },
               },
             ],
@@ -928,7 +999,7 @@
           symbolLayers: [
             {
               type: "extrude",
-              size: 90.5,
+              size: 90.85,
               material: {
                 color: "#d3d3d3",
               },
@@ -2133,7 +2204,11 @@
           zone_a_wall7,
           zone_a_wall8,
           zone_a_wall9,
+
           geojsonLayer_B_roof,
+          geojsonLayer_B_roof_column,
+          geojsonLayer_B_roof_sub_1,
+          geojsonLayer_B_roof_sub_2,
 
           geojsonLayer_B_wall_1,
           geojsonLayer_B_wall_2,
@@ -2147,25 +2222,25 @@
           geojsonLayer_B_round_pillar_1_1,
           geojsonLayer_B_round_pillar_1_2,
           geojsonLayer_B_round_pillar_1_3,
-          geojsonLayer_B_round_pillar_2_1,
+          // geojsonLayer_B_round_pillar_2_1,
           geojsonLayer_B_round_pillar_2_2,
           geojsonLayer_B_round_pillar_2_3,
-          geojsonLayer_B_round_pillar_3_1,
+          // geojsonLayer_B_round_pillar_3_1,
           geojsonLayer_B_round_pillar_3_2,
           geojsonLayer_B_round_pillar_3_3,
-          geojsonLayer_B_round_pillar_4_1,
+          // geojsonLayer_B_round_pillar_4_1,
           geojsonLayer_B_round_pillar_4_2,
           geojsonLayer_B_round_pillar_4_3,
-          geojsonLayer_B_round_pillar_5_1,
+          // geojsonLayer_B_round_pillar_5_1,
           geojsonLayer_B_round_pillar_5_2,
           geojsonLayer_B_round_pillar_5_3,
-          geojsonLayer_B_round_pillar_6_1,
+          // geojsonLayer_B_round_pillar_6_1,
           geojsonLayer_B_round_pillar_6_2,
           geojsonLayer_B_round_pillar_6_3,
-          geojsonLayer_B_round_pillar_7_1,
+          // geojsonLayer_B_round_pillar_7_1,
           geojsonLayer_B_round_pillar_7_2,
           geojsonLayer_B_round_pillar_7_3,
-          geojsonLayer_B_round_pillar_8_1,
+          // geojsonLayer_B_round_pillar_8_1,
           geojsonLayer_B_round_pillar_8_2,
           geojsonLayer_B_round_pillar_8_3,
 
@@ -2222,7 +2297,7 @@
         },
       });
 
-      for (let i = 0; i < 19; i++) {
+      for (let i = 0; i < 1000; i++) {
         view.graphics.add(
           new Graphic({
             geometry: listCircle[i],
