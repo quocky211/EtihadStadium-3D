@@ -2523,7 +2523,7 @@
           roundColumnLayerSpiral_2,
           roundColumnLayerSpiral_3,
           roundColumnLayerSpiral_4,
-          polygon_banister_Layer,
+          // polygon_banister_Layer,
         ]);
 
         const view = new SceneView({
@@ -2576,19 +2576,19 @@
 
         /* Spiral Stair */
         const locations = [
-          { x: -2.199214597876507, y: 53.4838823487394, z: 42 },
-          // { x: -2.198889337447818, y: 53.483537990433575, z: 42},
-          // { x: -2.198753326311802, y: 53.4831040771985, z: 42},
-          // { x: -2.1988669791679825, y: 53.482715645543365, z: 42},
-          // { x: -2.2018982099127284, y: 53.48360418053181, z: 42},
-          // { x: -2.20200827278425, y: 53.483208960860466, z: 42},
-          // { x: -2.2018859292270636, y: 53.48277537857368, z: 42},
-          // { x: -2.2015557232799385, y: 53.48242702862161, z: 42},
+          // { x: -2.1992235259859827, y: 53.48388099676423, z: 45},
+          // { x: -2.198889337447818, y: 53.483537990433575, z: 45},
+          { x: -2.198753326311802, y: 53.4831040771985, z: 45},
+          { x: -2.1988669791679825, y: 53.482715645543365, z: 45},
+          // { x: -2.2018982099127284, y: 53.48360418053181, z: 48},
+          // { x: -2.20200827278425, y: 53.483208960860466, z: 48},
+          // { x: -2.2018859292270636, y: 53.48277537857368, z: 48},
+          // { x: -2.2015557232799385, y: 53.48242702862161, z: 48},
         ];
         locations.forEach((location) => {
           const locationPoint = new Point(location);
 
-          Mesh.createFromGLTF(locationPoint, "./model/Part1.gltf")
+          Mesh.createFromGLTF(locationPoint, "./model/spiral_stair.gltf")
             .then(function (geometry) {
               geometry.scale(1000, {
                 origin: {
