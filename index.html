@@ -1632,7 +1632,7 @@
                   type: "extrude",
                   size: 85.0,
                   material: {
-                    color: "blue",
+                    color: "#00cccc",
                   },
                 },
               ],
@@ -1809,7 +1809,42 @@
             },
           },
         });
-
+        const geojsonLayer_D_top = new GeoJSONLayer({
+          url: "./data/zone_d/wall/zone_d_top.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.5,
+                  material: {
+                    color: "white",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const geojsonLayer_D_between_roof = new GeoJSONLayer({
+          url: "./data/zone_d/wall/zone_d_between_roof.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "#87CEFA",
+                  },
+                },
+              ],
+            },
+          },
+        });
         const geojsonLayer_D_column_roof = new GeoJSONLayer({
           url: "./data/zone_d/roof/zone_d_column_roof.geojson",
           renderer: {
@@ -2103,6 +2138,60 @@
             ],
           },
         };
+        const geojsonLayer_E_curve = new GeoJSONLayer({
+          url: "./data/zone_e/wall/zone_e_curve.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 2,
+                  material: {
+                    color: "white",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const geojsonLayer_E_top = new GeoJSONLayer({
+          url: "./data/zone_e/wall/zone_e_top.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.5,
+                  material: {
+                    color: "white",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const geojsonLayer_E_between_roof = new GeoJSONLayer({
+          url: "./data/zone_e/wall/zone_e_between_roof.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "#87CEFA",
+                  },
+                },
+              ],
+            },
+          },
+        });
         const geojsonLayer_E_round_pillar_1 = new GeoJSONLayer({
           url: "./data/zone_e/round_pillar/round_pillar_1.geojson",
         });
@@ -2516,6 +2605,8 @@
 
             geojsonLayer_D_wall,
             geojsonLayer_D_curve,
+            geojsonLayer_D_top,
+            geojsonLayer_D_between_roof,
             geojsonLayer_D_round_pillar_1,
             geojsonLayer_D_round_pillar_2,
             geojsonLayer_D_round_pillar_3,
@@ -2535,6 +2626,9 @@
             geojsonLayer_D_roof_b,
 
             geojsonLayer_E_wall,
+            geojsonLayer_E_curve,
+            geojsonLayer_E_top,
+            geojsonLayer_E_between_roof,
             geojsonLayer_E_column_roof,
             zone_E_columns_sub_2,
             zone_E_columns_sub_3,
@@ -2655,13 +2749,13 @@
       };
       console.log(
         tinhtien(
-          [-2.198810161685199, 53.48325479575517, 70],
-          [-2.198761885821056, 53.4832574329215, 74],
+          [-2.2005321860035263, 53.48411452120822, 91],
+              [-2.200524482913248, 53.484044810923656, 95.1],
           [
-            [-2.198849521729203, 53.48338369796569, 70],
-            [-2.1988512481938214, 53.48338890676609, 70],
+          [-2.200646386362489, 53.4841070271044, 90.5],
+              [-2.200726460668751, 53.48409800122748, 90]
           ],
-          -4
+          -4.1
         )
       );
     </script>
