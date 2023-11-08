@@ -1,0 +1,161 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 1-2 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.2017642174722827, 53.482859834267295, 100.5],
+            [-2.201756162952931, 53.48284401952221, 100.25],
+            [-2.2017440198456724, 53.482821254622614, 100.0],
+            [-2.201726255718632, 53.48279279296691, 99.75],
+            [-2.2017108428675196, 53.48276868088789, 99.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_1_2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 2-3 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.201708137130696, 53.48276491944328, 99.45],
+            [-2.201683365395869, 53.482733517097266, 99.0],
+            [-2.2016602430478396, 53.48270629038889, 98.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_2_3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 3-4 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.2016560717855587, 53.48270155370443, 98.45],
+            [-2.2016288903499017, 53.48266976413177, 98.0],
+            [-2.2016017211576298, 53.48264103935958, 97.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_3_4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 4-5 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.2015972254500946, 53.4826363718611, 97.45],
+            [-2.2015703389592853, 53.48260869870601, 97.0],
+            [-2.2015420771506427, 53.48258190705897, 96.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_4_5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 5-6 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.201537095436637, 53.48257729413426, 96.45],
+            [-2.2015041565134448, 53.482549287072715, 96.0],
+            [-2.2014715426820466, 53.48252240851333, 95.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_5_6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 6-7 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.201468039477741, 53.482517344627254, 95.45],
+            [-2.201426797497887, 53.48247381545462, 94.95],
+            [-2.2013944331991495, 53.482439236638825, 94.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_6_7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 7-8 Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.2013870649094947, 53.482436215199755, 94.45],
+            [-2.2013245431708897, 53.482408785201706, 93.55],
+            [-2.201249362828078, 53.48237350420919, 92.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_7_8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Line Wall Symmetry 8-ZoneA Zone B",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.2012420500865106, 53.48237031769154, 92.45],
+            [-2.2011972914783073, 53.48234755729497, 91.5],
+            [-2.2011561728878037, 53.48232620845691, 90.5]
+          ]
+        ]
+      },
+      "id": "line_wall_symmetry_8_zoneA"
+    }
+  ]
+}

@@ -613,28 +613,12 @@
         // Zone B
         let listCircle = [];
         listCoordinates = [
-          // [-2.1989105634447634, 53.483150672141186],
-          // [-2.1989122188803583, 53.48305464617142],
-          // [-2.1989207507255952, 53.48298868489513],
-          // [-2.198937298374548, 53.48291663449119],
-          // [-2.198962093850303, 53.48284399417016],
-          // [-2.198997676338993, 53.48276871716416],
-          // [-2.199026224679031, 53.48268622834205],
-          // [-2.199105707169946, 53.482600174869525],
+          //vẽ các cột khu đối xứng zone b
+          [-2.201710117764368, 53.482767343356876],[-2.2016578577830956, 53.482704025865736],[-2.201599642870789, 53.482638658506204],[-2.201539641609875, 53.48257962046334],[-2.201468867990464, 53.48252022411867],[-2.201390660641772, 53.48243776200601],[-2.2012455748838122, 53.48237201454586],
 
-          //ve duong line tren dinh
-          // [-2.1989093654864957, 53.48313083882407],
-          // [-2.1989086354622165, 53.48310734452091],
-          // [-2.198908284662605, 53.483081130133016],
-          // [-2.1989159917644234, 53.48302202595729],
-          // [-2.1989280428283786, 53.48295129300959],
-          // [-2.1989428196489946, 53.48289432848577],
-          // [-2.1989800348309814, 53.48280273337249],
-          // [-2.1989685379102184, 53.48282601003531],
-          // [-2.199070243063876, 53.482635693107405],
-          // [-2.199141185425004, 53.48256380850212],
-          // [-2.1991225492887625, 53.48258265032541],
-
+          //ve duong line wall
+          [-2.201756162952931, 53.48284401952221],[-2.2017440198456724, 53.482821254622614],[-2.201726255718632, 53.48279279296691],
+          [-2.201683365395869, 53.482733517097266],
           // hihi
           // [-2.1998100530797915, 53.48360933591731],
           // [-2.199827526878171, 53.48364674098711],
@@ -672,12 +656,12 @@
           [-2.1997980917597335, 53.48350610003935],
           [-2.199810387555622, 53.48353892256747],
         ];
-        for (let i = 0; i < 19; i++) {
+        for (let i = 0; i < 100; i++) {
           listCircle[i] = new Circle({
             center: listCoordinates[i],
             geodesic: true,
             numberOfPoints: 100,
-            radius: 0.4,
+            radius: 0.15,
             radiusUnit: "meters",
           });
         }
@@ -802,6 +786,9 @@
         const geojsonLayer_B_wall_1 = new GeoJSONLayer({
           url: "./data/zone_b/wall/wall_1.geojson",
         });
+        const geojsonLayer_B_wall_symmetry_1 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_1.geojson",
+        });
         const geojsonLayer_B_wall_2 = new GeoJSONLayer({
           url: "./data/zone_b/wall/wall_2.geojson",
         });
@@ -849,8 +836,15 @@
           url: "./data/zone_b/wall/line_wall_2_1.geojson",
         });
 
+        const geojsonLayer_B_line_wall_symmetry = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/line_wall_symmetry.geojson",
+        });
+
         const geojsonLayer_B_above_line_wall = new GeoJSONLayer({
           url: "./data/zone_b/wall/above_line_wall.geojson",
+        });
+        const geojsonLayer_B_above_line_wall_symmetry = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/above_line_wall_symmetry.geojson",
         });
 
         const geojsonLayer_B_line_between_wall_roof = new GeoJSONLayer({
@@ -933,7 +927,86 @@
           url: "./data/zone_b/round_pillar/round_pillar_8_3.geojson",
         });
 
+        const geojsonLayer_B_round_pillar_symmetry_1_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_1_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_1_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_1_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_1_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_1_3.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_2_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_2_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_2_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_2_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_2_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_2_3.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_3_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_3_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_3_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_3_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_3_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_3_3.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_4_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_4_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_4_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_4_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_4_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_4_3.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_5_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_5_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_5_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_5_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_5_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_5_3.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_6_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_6_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_6_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_6_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_6_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_6_3.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_7_1 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_7_1.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_7_2 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_7_2.geojson",
+        });
+        const geojsonLayer_B_round_pillar_symmetry_7_3 = new GeoJSONLayer({
+          url: "./data/zone_b/round_pillar_symmetry/round_pillar_symmetry_7_3.geojson",
+        });
+
         geojsonLayer_B_wall_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 99.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_1.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
@@ -1174,7 +1247,39 @@
             ],
           },
         };
+
+        geojsonLayer_B_line_wall_symmetry.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 2.0,
+                material: {
+                  color: "white",
+                },
+              },
+            ],
+          },
+        };
+
         geojsonLayer_B_above_line_wall.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 1.5,
+                material: {
+                  color: "white",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_above_line_wall_symmetry.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
@@ -1551,6 +1656,322 @@
           },
         };
         geojsonLayer_B_round_pillar_8_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+
+        geojsonLayer_B_round_pillar_symmetry_1_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 98.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_1_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_1_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_2_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 97.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_2_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_2_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_3_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 96.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_3_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_3_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_4_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 95.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_4_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_4_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_5_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 94.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_5_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_5_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_6_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 93.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_6_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_6_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_7_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 91.5,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_7_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 3.0,
+                material: {
+                  color: "#f5f5f5",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_round_pillar_symmetry_7_3.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
@@ -2567,6 +2988,7 @@
             geojsonLayer_B_roof_sub_2,
 
             geojsonLayer_B_wall_1,
+            geojsonLayer_B_wall_symmetry_1,
             geojsonLayer_B_wall_2,
             geojsonLayer_B_wall_3,
             geojsonLayer_B_wall_4,
@@ -2600,6 +3022,28 @@
             geojsonLayer_B_round_pillar_8_2,
             geojsonLayer_B_round_pillar_8_3,
 
+            geojsonLayer_B_round_pillar_symmetry_1_1,
+            geojsonLayer_B_round_pillar_symmetry_1_2,
+            geojsonLayer_B_round_pillar_symmetry_1_3,
+            geojsonLayer_B_round_pillar_symmetry_2_1,
+            geojsonLayer_B_round_pillar_symmetry_2_2,
+            geojsonLayer_B_round_pillar_symmetry_2_3,
+            geojsonLayer_B_round_pillar_symmetry_3_1,
+            geojsonLayer_B_round_pillar_symmetry_3_2,
+            geojsonLayer_B_round_pillar_symmetry_3_3,
+            geojsonLayer_B_round_pillar_symmetry_4_1,
+            geojsonLayer_B_round_pillar_symmetry_4_2,
+            geojsonLayer_B_round_pillar_symmetry_4_3,
+            geojsonLayer_B_round_pillar_symmetry_5_1,
+            geojsonLayer_B_round_pillar_symmetry_5_2,
+            geojsonLayer_B_round_pillar_symmetry_5_3,
+            geojsonLayer_B_round_pillar_symmetry_6_1,
+            geojsonLayer_B_round_pillar_symmetry_6_2,
+            geojsonLayer_B_round_pillar_symmetry_6_3,
+            geojsonLayer_B_round_pillar_symmetry_7_1,
+            geojsonLayer_B_round_pillar_symmetry_7_2,
+            geojsonLayer_B_round_pillar_symmetry_7_3,
+
             geojsonLayer_B_line_wall_ZoneA_8,
             geojsonLayer_B_line_wall_8_7,
             geojsonLayer_B_line_wall_7_6,
@@ -2609,7 +3053,10 @@
             geojsonLayer_B_line_wall_3_2,
             geojsonLayer_B_line_wall_2_1,
 
+            geojsonLayer_B_line_wall_symmetry,
+
             geojsonLayer_B_above_line_wall,
+            geojsonLayer_B_above_line_wall_symmetry,
             geojsonLayer_B_line_between_wall_roof,
 
             geojsonLayer_C_top,
@@ -2676,7 +3123,7 @@
           },
         });
 
-        for (let i = 0; i < 19; i++) {
+        for (let i = 0; i < 100; i++) {
           view.graphics.add(
             new Graphic({
               geometry: listCircle[i],
@@ -2728,32 +3175,32 @@
         locations.forEach((location) => {
           const locationPoint = new Point(location);
 
-          Mesh.createFromGLTF(locationPoint, "./model/spiral_stair.gltf")
-            .then(function (geometry) {
-              geometry.scale(1000, {
-                origin: {
-                  locationPoint,
-                },
-              });
-              geometry.rotate(0, 0, 90);
-              const graphic = new Graphic({
-                geometry,
-                symbol: {
-                  type: "mesh-3d",
-                  symbolLayers: [
-                    {
-                      type: "fill",
-                      material: {
-                        // color: "rgba(0, 0, 255, 0.5)"
-                      },
-                      size: 1000,
-                    },
-                  ],
-                },
-              });
-              view.graphics.add(graphic);
-            })
-            .catch(console.error);
+          // Mesh.createFromGLTF(locationPoint, "./model/spiral_stair.gltf")
+          //   .then(function (geometry) {
+          //     geometry.scale(1000, {
+          //       origin: {
+          //         locationPoint,
+          //       },
+          //     });
+          //     geometry.rotate(0, 0, 90);
+          //     const graphic = new Graphic({
+          //       geometry,
+          //       symbol: {
+          //         type: "mesh-3d",
+          //         symbolLayers: [
+          //           {
+          //             type: "fill",
+          //             material: {
+          //               // color: "rgba(0, 0, 255, 0.5)"
+          //             },
+          //             size: 1000,
+          //           },
+          //         ],
+          //       },
+          //     });
+          //     view.graphics.add(graphic);
+          //   })
+          //   .catch(console.error);
         });
       });
       /* ============================================================ */
@@ -2769,14 +3216,14 @@
       };
       console.log(
         tinhtien(
-          [-2.2020243069155256, 53.4830512760063, 70],
-              [-2.2021230739542466, 53.48304457576457, 74],
+          [-2.2012455748838122, 53.48237201454586, 97.5],
+            [-2.2012498978960555, 53.48237121432528, 97.5],
           
           [ 
-          [-2.2019933129415468, 53.482952291070845, 70],
-                [-2.2019908958926955, 53.48294707134576, 70],
+          [-2.2011972914783073, 53.48234755729497, 96.5],
+          [-2.2011561728878037, 53.48232620845691, 95.5],
           ],
-          -4
+          0
         )
       );
     </script>
