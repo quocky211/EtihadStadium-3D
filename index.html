@@ -2892,6 +2892,26 @@
         };
         // end render pillar ZONE D
 
+        // zone d dx
+        const geojsonLayer_D_wall_dx = new GeoJSONLayer({
+          url: "./data/zone_d_dx/wall/zone_d_wall.geojson",
+        });
+        geojsonLayer_D_wall_dx.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 98,
+                material: {
+                  color: "#ddd",
+                },
+              },
+            ],
+          },
+        };
+
         // Zone E
         const geojsonLayer_E_roof_a = new GeoJSONLayer({
           url: "./data/zone_e/roof/zone_e_roof_a.geojson",
@@ -3534,12 +3554,13 @@
             geojsonLayer_D_round_pillar_9,
             geojsonLayer_D_round_pillar_10,
             geojsonLayer_D_round_pillar_11,
-
             zone_D_columns_sub_2,
             zone_D_columns_sub_3,
             geojsonLayer_D_column_roof,
             geojsonLayer_D_roof_a,
             geojsonLayer_D_roof_b,
+
+            geojsonLayer_D_wall_dx,
 
             geojsonLayer_E_roof_a,
             geojsonLayer_E_roof_b,
