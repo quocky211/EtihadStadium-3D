@@ -1,0 +1,24 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "wall_17"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.201000695123924, 53.48216112640537, 60],
+                        [-2.201024489383838, 53.48217640561626, 59.25],
+                        [-2.2010484037039295, 53.48219446103891, 58.6]
+                    ]
+                ]
+            },
+            "id": "wall-17"
+        }
+    ]
+}
