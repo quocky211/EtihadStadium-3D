@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall Symmetry Zone B No.6",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.201468039477741, 53.482517344627254, 0.95],
+            [-2.201426797497887, 53.48247381545462, 0.45],
+            [-2.2013944331991495, 53.482439236638825, 0]
+          ]
+        ]
+      },
+      "id": "tuongdx6"
+    }
+  ]
+}

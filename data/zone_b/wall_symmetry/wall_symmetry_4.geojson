@@ -1,0 +1,27 @@
+{
+    "type": "FeatureCollection",
+    "generator": "smartcity",
+    "copyright": "Smartcity",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Wall Symmetry Zone B No.4",
+          "height": 250,
+          "idb": "7"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-2.2015972254500946, 53.4826363718611, 0.95],
+              [-2.2015703389592853, 53.48260869870601, 0.5],
+              [-2.2015420771506427, 53.48258190705897, 0]
+            ]
+          ]
+        },
+        "id": "tuongdx4"
+      }
+    ]
+  }
+  

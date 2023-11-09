@@ -1,0 +1,27 @@
+{
+    "type": "FeatureCollection",
+    "generator": "smartcity",
+    "copyright": "Smartcity",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Wall Symmetry Zone B No.3",
+          "height": 250,
+          "idb": "7"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-2.2016560717855587, 53.48270155370443, 0.95],
+              [-2.2016288903499017, 53.48266976413177, 0.5],
+              [-2.2016017211576298, 53.48264103935958, 0]
+            ]
+          ]
+        },
+        "id": "tuongdx3"
+      }
+    ]
+  }
+  

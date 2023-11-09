@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall Symmetry Zone B No.5",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.201537095436637, 53.48257729413426, 0.95],
+            [-2.2015041565134448, 53.482549287072715, 0.5],
+            [-2.2014715426820466, 53.48252240851333, 0]
+          ]
+        ]
+      },
+      "id": "tuongdx5"
+    }
+  ]
+}

@@ -1,29 +1,28 @@
 {
-    "type": "FeatureCollection",
-    "generator": "smartcity",
-    "copyright": "Smartcity",
-    "features": [
-      {
-        "type": "Feature",
-        "properties": {
-          "Building name": "Wall Symmetry Zone B No.1",
-          "height": 250,
-          "idb": "7"
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-                [-2.2017642174722827, 53.482859834267295, 1.0],
-                [-2.201756162952931, 53.48284401952221, 0.75],
-                [-2.2017440198456724, 53.482821254622614, 0.5],
-                [-2.201726255718632, 53.48279279296691, 0.25],
-                [-2.2017108428675196, 53.48276868088789, 0]
-            ]
+  "type": "FeatureCollection",
+  "generator": "smartcity",
+  "copyright": "Smartcity",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Building name": "Wall Symmetry Zone B No.1",
+        "height": 250,
+        "idb": "7"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.2017642174722827, 53.482859834267295, 1.0],
+            [-2.201756162952931, 53.48284401952221, 0.75],
+            [-2.2017440198456724, 53.482821254622614, 0.5],
+            [-2.201726255718632, 53.48279279296691, 0.25],
+            [-2.2017108428675196, 53.48276868088789, 0]
           ]
-        },
-        "id": "tuongdx1"
-      }
-    ]
-  }
-  
+        ]
+      },
+      "id": "tuongdx1"
+    }
+  ]
+}

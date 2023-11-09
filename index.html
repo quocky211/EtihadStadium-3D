@@ -974,39 +974,6 @@
         // Zone B
         let listCircle = [];
         listCoordinates = [
-          //vẽ các cột khu đối xứng zone b
-          [-2.201710117764368, 53.482767343356876],
-          [-2.2016578577830956, 53.482704025865736],
-          [-2.201599642870789, 53.482638658506204],
-          [-2.201539641609875, 53.48257962046334],
-          [-2.201468867990464, 53.48252022411867],
-          [-2.201390660641772, 53.48243776200601],
-          [-2.2012455748838122, 53.48237201454586],
-
-          //ve duong line wall
-          [-2.201756162952931, 53.48284401952221],
-          [-2.2017440198456724, 53.482821254622614],
-          [-2.201726255718632, 53.48279279296691],
-          [-2.201683365395869, 53.482733517097266],
-          // hihi
-          // [-2.1998100530797915, 53.48360933591731],
-          // [-2.199827526878171, 53.48364674098711],
-          // [-2.199870032171615, 53.48369701089823],
-          // [-2.199913055108877, 53.48373312436556],
-          // [-2.2000024181936992, 53.4837725782898],
-          // [-2.200092754724398, 53.483779580281166],
-          // [-2.2001624006039977, 53.483779473053964],
-          // [-2.2002428795450615, 53.483779213004425],
-          // [-2.2003426698560893, 53.48377636431867],
-
-          // [-2.1997705340833984, 53.48342891377706],
-          // [-2.199837452223871, 53.483604658108824],
-          // [-2.1998531936597105, 53.483640142761885],
-          // [-2.1998790064445166, 53.48369011963471],
-          // [-2.1999163417149514, 53.48372959900534],
-          // [-2.2000053847284264, 53.48375367998093],
-          // [-2.200005734943464, 53.48375096653107],
-          // [-2.2000891470778545, 53.48375034742432],
           [-2.2001601406031583, 53.4837493671493],
           [-2.200236984956708, 53.48374805279406],
           [-2.200337511730564, 53.48374667388901],
@@ -1035,33 +1002,7 @@
           });
         }
 
-        //   //ve vom
-        //   // [-2.1990620918335892, 53.483048280439284],[-2.1992078394087327, 53.48304118709831],[-2.1993577642747515, 53.483033130359324],[-2.199506027715405, 53.48302442130918],[-2.1996579580015543, 53.48301765088476],
-        //   // [-2.199070774124489, 53.4829822445727],[-2.1992227895861114, 53.48297337716272],[-2.1993756473669546, 53.48296590697185],[-2.1995332480748955, 53.48295679539747],[-2.1996488472914177, 53.482951660803934],
-        //   // [-2.1991030907319375, 53.48290799772683],[-2.199272547017834, 53.48289715735259],[-2.1994433963403446, 53.48288707743613],[-2.199636699374087, 53.48287613815873],
-        //   // [-2.199106057552913, 53.482835882855326],[-2.1992501258451385, 53.48282618926218],[-2.1994719508164597, 53.48281229129456],[-2.199620788272136, 53.482802258826865],
-        //   // [-2.199133922226696, 53.48276118324451],[-2.199272732236314, 53.482752519764574],[-2.1994680477918185, 53.4827380650805],[-2.1996185807913986, 53.482729019282274],
-        //   // [-2.199156456112501, 53.482692661823855],[-2.19928949709079, 53.48269895970782],[-2.1994259201798516, 53.48270402422212],[-2.1994951666039357, 53.482707916267934],
-
-        //   [-2.1995998491598097, 53.48272345830218],[-2.199600012136676, 53.4827189204914],[-2.19957620585432, 53.482713138380184],
-
-        //   [-2.1995992786151923, 53.482730790777644],
-        //   [-2.1996079155423707, 53.48280374994954],
-        //   [-2.199624674377583, 53.482877002445],
-
-        //   //vom con 1
-        //   [-2.1994014992999844, 53.48267341818469],[-2.199414930834797, 53.4826506883165],
-        //   [-2.1993977698193743, 53.48271059441009],
-        // ];
-        // for (let i = 0; i < 1000; i++) {
-        //   listCircle[i] = new Circle({
-        //     center: listCoordinates[i],
-        //     geodesic: true,
-        //     numberOfPoints: 100,
-        //     radius: 0.15,
-        //     radiusUnit: "meters",
-        //   });
-        // }
+        
         const geojsonLayer_B_roof = new GeoJSONLayer({
           url: "./data/zone_b/zone_b_roof.geojson",
           renderer: {
@@ -1134,6 +1075,62 @@
             },
           },
         });
+
+        const geojsonLayer_B_roof_column_symmetry = new GeoJSONLayer({
+          url: "./data/zone_b/roof_symmetry/roof_column_symmetry.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.5,
+                  material: {
+                    color: "white",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const geojsonLayer_B_roof_symmetry_sub_1 = new GeoJSONLayer({
+          url: "./data/zone_b/roof_symmetry/roof_symmetry_sub_1.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.1,
+                  material: {
+                    color: "#F0f0f0",
+                  },
+                },
+              ],
+            },
+          },
+        });
+        const geojsonLayer_B_roof_symmetry_sub_2 = new GeoJSONLayer({
+          url: "./data/zone_b/roof_symmetry/roof_symmetry_sub_2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.1,
+                  material: {
+                    color: "#B0C4DE",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         const geojsonLayer_B_wall = new GeoJSONLayer({
           url: "./data/zone_b/zone_b_wall.geojson",
           renderer: {
@@ -1155,9 +1152,6 @@
         const geojsonLayer_B_wall_1 = new GeoJSONLayer({
           url: "./data/zone_b/wall/wall_1.geojson",
         });
-        const geojsonLayer_B_wall_symmetry_1 = new GeoJSONLayer({
-          url: "./data/zone_b/wall_symmetry/wall_symmetry_1.geojson",
-        });
         const geojsonLayer_B_wall_2 = new GeoJSONLayer({
           url: "./data/zone_b/wall/wall_2.geojson",
         });
@@ -1178,6 +1172,31 @@
         });
         const geojsonLayer_B_wall_8 = new GeoJSONLayer({
           url: "./data/zone_b/wall/wall_8.geojson",
+        });
+
+        const geojsonLayer_B_wall_symmetry_1 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_1.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_2 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_2.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_3 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_3.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_4 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_4.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_5 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_5.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_6 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_6.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_7 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_7.geojson",
+        });
+        const geojsonLayer_B_wall_symmetry_8 = new GeoJSONLayer({
+          url: "./data/zone_b/wall_symmetry/wall_symmetry_8.geojson",
         });
 
         const geojsonLayer_B_line_wall_ZoneA_8 = new GeoJSONLayer({
@@ -1375,21 +1394,6 @@
             ],
           },
         };
-        geojsonLayer_B_wall_symmetry_1.renderer = {
-          type: "simple",
-          symbol: {
-            type: "polygon-3d",
-            symbolLayers: [
-              {
-                type: "extrude",
-                size: 99.5,
-                material: {
-                  color: "#d3d3d3",
-                },
-              },
-            ],
-          },
-        };
         geojsonLayer_B_wall_2.renderer = {
           type: "simple",
           symbol: {
@@ -1481,6 +1485,127 @@
           },
         };
         geojsonLayer_B_wall_8.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 90.85,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+
+        geojsonLayer_B_wall_symmetry_1.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 99.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_2.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 98.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_3.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 97.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_4.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 96.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_5.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 95.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_6.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 94.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_7.renderer = {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "extrude",
+                size: 92.5,
+                material: {
+                  color: "#d3d3d3",
+                },
+              },
+            ],
+          },
+        };
+        geojsonLayer_B_wall_symmetry_8.renderer = {
           type: "simple",
           symbol: {
             type: "polygon-3d",
@@ -3414,8 +3539,11 @@
             geojsonLayer_B_roof_sub_1,
             geojsonLayer_B_roof_sub_2,
 
+            geojsonLayer_B_roof_column_symmetry,
+            geojsonLayer_B_roof_symmetry_sub_1,
+            geojsonLayer_B_roof_symmetry_sub_2,
+
             geojsonLayer_B_wall_1,
-            geojsonLayer_B_wall_symmetry_1,
             geojsonLayer_B_wall_2,
             geojsonLayer_B_wall_3,
             geojsonLayer_B_wall_4,
@@ -3423,6 +3551,15 @@
             geojsonLayer_B_wall_6,
             geojsonLayer_B_wall_7,
             geojsonLayer_B_wall_8,
+
+            geojsonLayer_B_wall_symmetry_1,
+            geojsonLayer_B_wall_symmetry_2,
+            geojsonLayer_B_wall_symmetry_3,
+            geojsonLayer_B_wall_symmetry_4,
+            geojsonLayer_B_wall_symmetry_5,
+            geojsonLayer_B_wall_symmetry_6,
+            geojsonLayer_B_wall_symmetry_7,
+            geojsonLayer_B_wall_symmetry_8,
 
             geojsonLayer_B_round_pillar_1_1,
             geojsonLayer_B_round_pillar_1_2,
@@ -3650,7 +3787,7 @@
 
           [
             [-2.2011972914783073, 53.48234755729497, 96.5],
-            [-2.2011561728878037, 53.48232620845691, 95.5],
+            [-2.201159507381823, 53.482324063964484, 96.0],
           ],
           0
         )
