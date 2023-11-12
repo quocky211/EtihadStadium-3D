@@ -1,0 +1,11 @@
+Model Information:
+* title:	2rows-tribune
+* source:	https://sketchfab.com/3d-models/2rows-tribune-113b8bef2b8f4b2da152840cc1af71f0
+* author:	noahlunaa (https://sketchfab.com/noahlunaa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "2rows-tribune" (https://sketchfab.com/3d-models/2rows-tribune-113b8bef2b8f4b2da152840cc1af71f0) by noahlunaa (https://sketchfab.com/noahlunaa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
