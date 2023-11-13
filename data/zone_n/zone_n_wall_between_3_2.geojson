@@ -1,0 +1,46 @@
+{
+    "type": "FeatureCollection",
+    "generator": "smartcity",
+    "copyright": "Smartcity",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Seat 3",
+          "height": 250,
+          "idb": "7"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-2.201715596213236, 53.48294764222495, 87],
+              [-2.2016982159857728, 53.48291563131131, 87],
+              [-2.2016770964501116, 53.48287668598981, 87]
+            ]
+          ]
+        },
+        "id": "seat1"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Building name": "Wall C",
+          "height": 250,
+          "idb": "7"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-2.2017271634605886, 53.482997259968904, 87],
+              [-2.2017204742228014, 53.48296856647621, 87],
+              [-2.201715596213236, 53.48294764222495, 87]
+            ]
+          ]
+        },
+        "id": "seat2"
+      }
+    ]
+  }
+  

@@ -3294,6 +3294,84 @@
           },
         });
 
+        ///////////////////////////////////// SEAT ZONE /////////////////////////////////////////////////
+
+        const zone_N_seat_3 = new GeoJSONLayer({
+          url: "./data/zone_n/zone_n_seat_3.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "#87CEFA",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const zone_N_space_between_3_and_2 = new GeoJSONLayer({
+          url: "./data/zone_n/zone_n_space_between_3_and_2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "white",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const zone_N_wall_between_3_2 = new GeoJSONLayer({
+          url: "./data/zone_n/zone_n_wall_between_3_2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 1.25,
+                  material: {
+                    color: "blue",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        const zone_N_seat_2 = new GeoJSONLayer({
+          url: "./data/zone_n/zone_n_seat_2.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "blue",
+                  },
+                },
+              ],
+            },
+          },
+        });
+
         // Spiral Stairs
 
         // Round1 Columns for Spiral Stairs
@@ -3729,6 +3807,11 @@
             geojsonLayer_E_round_pillar_2,
             geojsonLayer_E_round_pillar_3,
             geojsonLayer_E_round_pillar_4,
+
+            zone_N_seat_3,
+            zone_N_space_between_3_and_2,
+            zone_N_wall_between_3_2,
+            zone_N_seat_2,
           ],
         });
         map.addMany([
@@ -3939,12 +4022,12 @@
       };
       console.log(
         tinhtien(
-          [-2.2012455748838122, 53.48237201454586, 97.5],
-          [-2.2012498978960555, 53.48237121432528, 97.5],
-
+          [-2.201310991720648, 53.48245274982851, 88],
+              [-2.201305956829158, 53.48245350528835, 88],
           [
-            [-2.2011972914783073, 53.48234755729497, 96.5],
-            [-2.201159507381823, 53.482324063964484, 96.0],
+          [-2.2013881012035452, 53.48253592170302, 88],
+              [-2.2014207150349434, 53.4825628002624, 88],
+              [-2.2014536539581355, 53.482590807323945, 88],
           ],
           0
         )
