@@ -3081,7 +3081,24 @@
             },
           },
         });
-
+        const geojsonLayer_D_DX_between_roof = new GeoJSONLayer({
+          url: "./data/zone_d_dx/wall/zone_d_between_roof.geojson",
+          renderer: {
+            type: "simple",
+            symbol: {
+              type: "polygon-3d",
+              symbolLayers: [
+                {
+                  type: "extrude",
+                  size: 0.05,
+                  material: {
+                    color: "#87CEFA",
+                  },
+                },
+              ],
+            },
+          },
+        });
         const geojsonLayer_D_dx_column_roof = new GeoJSONLayer({
           url: "./data/zone_d_dx/roof/zone_d_column_roof.geojson",
           renderer: {
@@ -3588,6 +3605,7 @@
           [-2.201849505075458, 53.483153388129764, 102.5],
 
           // column zone D dx
+          [-2.1993907408793576, 53.483860045598476, 99],
           [-2.200934861251301, 53.484057774064496, 90],
           [-2.2011429220755487, 53.48399334899745, 91.15],
           [-2.2013234403791317, 53.48391989249711, 92.3],
@@ -3878,6 +3896,7 @@
 
             geojsonLayer_D_wall_dx,
             geojsonLayer_D_dx_curve,
+            geojsonLayer_D_DX_between_roof,
             geojsonLayer_D_dx_column_roof,
             geojsonLayer_D_dx_roof_a,
             geojsonLayer_D_dx_roof_b,
@@ -4110,12 +4129,11 @@
       };
       console.log(
         tinhtien(
-          [-2.201310991720648, 53.48245274982851, 88],
-          [-2.201305956829158, 53.48245350528835, 88],
+          [-2.2017681615842806, 53.48352366338041, 99.9],
+              [-2.201772484596524, 53.483522863159834, 99.9],
           [
-            [-2.2013881012035452, 53.48253592170302, 88],
-            [-2.2014207150349434, 53.4825628002624, 88],
-            [-2.2014536539581355, 53.482590807323945, 88],
+          [-2.2017076284856176, 53.483625624621865, 98.75],
+              [-2.2017392152753934, 53.4835747106939, 99.35],
           ],
           0
         )
