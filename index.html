@@ -1066,6 +1066,25 @@
                     },
                 });
 
+                const zone_m_floor_3 = new GeoJSONLayer({
+                    url: "./data/zone_m/zone_m_floor/zone_m_floor_3.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
                 const zone_m_wall_1 = new GeoJSONLayer({
                     url: "./data/zone_m/zone_m_wall/zone_m_wall_1.geojson",
                     renderer: {
@@ -1116,6 +1135,25 @@
                                     size: 3,
                                     material: {
                                         color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_m_wall_4 = new GeoJSONLayer({
+                    url: "./data/zone_m/zone_m_wall/zone_m_wall_4.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#FFFAFA",
                                     },
                                 },
                             ],
@@ -3929,9 +3967,11 @@
             zone_m_seat_3,
             zone_m_floor_1,
             zone_m_floor_2,
+            zone_m_floor_3,
             zone_m_wall_1,
             zone_m_wall_2,
             zone_m_wall_3,
+            zone_m_wall_4,
 
             geojsonLayer_B_roof,
 
