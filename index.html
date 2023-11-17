@@ -3587,81 +3587,412 @@
 
         ///////////////////////////////////// SEAT ZONE /////////////////////////////////////////////////
 
-        const zone_N_seat_3 = new GeoJSONLayer({
-          url: "./data/zone_n/zone_n_seat_3.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 0.05,
-                  material: {
-                    color: "#87CEFA",
-                  },
-                },
-              ],
-            },
-          },
-        });
+        // zone n
+        const zone_n_seat_1 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_seat/zone_n_seat_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#1E90FF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
 
-        const zone_N_space_between_3_and_2 = new GeoJSONLayer({
-          url: "./data/zone_n/zone_n_space_between_3_and_2.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 0.05,
-                  material: {
-                    color: "white",
-                  },
-                },
-              ],
-            },
-          },
-        });
+                const zone_n_seat_2 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_seat/zone_n_seat_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#1E90FF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
 
-        const zone_N_wall_between_3_2 = new GeoJSONLayer({
-          url: "./data/zone_n/zone_n_wall_between_3_2.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 1.25,
-                  material: {
-                    color: "blue",
-                  },
-                },
-              ],
-            },
-          },
-        });
+                const zone_n_floor_1 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_floor/zone_n_floor_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
 
-        const zone_N_seat_2 = new GeoJSONLayer({
-          url: "./data/zone_n/zone_n_seat_2.geojson",
-          renderer: {
-            type: "simple",
-            symbol: {
-              type: "polygon-3d",
-              symbolLayers: [
-                {
-                  type: "extrude",
-                  size: 0.05,
-                  material: {
-                    color: "blue",
-                  },
-                },
-              ],
-            },
-          },
-        });
+                const zone_n_floor_2 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_floor/zone_n_floor_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_n_wall_1 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_wall/zone_n_wall_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 2,
+                                    material: {
+                                        color: "#00BFFF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_n_wall_2 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_wall/zone_n_wall_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_n_wall_3 = new GeoJSONLayer({
+                    url: "./data/zone_n/zone_n_wall/zone_n_wall_3.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#FFFAFA",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+
+                // zone p
+
+                const zone_p_seat_1 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_seat/zone_p_seat_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#1E90FF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_p_seat_2 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_seat/zone_p_seat_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#1E90FF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_p_floor_1 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_floor/zone_p_floor_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_p_floor_2 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_floor/zone_p_floor_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+
+                const zone_p_wall_1 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_wall/zone_p_wall_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 2,
+                                    material: {
+                                        color: "#00BFFF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_p_wall_2 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_wall/zone_p_wall_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_p_wall_3 = new GeoJSONLayer({
+                    url: "./data/zone_p/zone_p_wall/zone_p_wall_3.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#FFFAFA",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+
+                // zone q
+
+                const zone_q_seat_1 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_seat/zone_q_seat_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#1E90FF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_q_seat_2 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_seat/zone_q_seat_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#1E90FF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_q_floor_1 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_floor/zone_q_floor_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_q_floor_2 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_floor/zone_q_floor_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 0.05,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_q_wall_1 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_wall/zone_q_wall_1.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 2,
+                                    material: {
+                                        color: "#00BFFF",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_q_wall_2 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_wall/zone_q_wall_2.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#D3D3D3",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
+                const zone_q_wall_3 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_wall/zone_q_wall_3.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 3,
+                                    material: {
+                                        color: "#FFFAFA",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
 
         // Spiral Stairs
 
@@ -4116,10 +4447,30 @@
             geojsonLayer_E_round_pillar_3,
             geojsonLayer_E_round_pillar_4,
 
-            zone_N_seat_3,
-            zone_N_space_between_3_and_2,
-            zone_N_wall_between_3_2,
-            zone_N_seat_2,
+
+            zone_q_seat_1,
+            zone_q_seat_2,
+            zone_q_floor_1,
+            zone_q_floor_2,
+            zone_q_wall_1,
+            zone_q_wall_2,
+            zone_q_wall_3,
+            zone_p_seat_1,
+            zone_p_seat_2,
+            zone_p_floor_1,
+            zone_p_floor_2,
+            zone_p_wall_1,
+            zone_p_wall_2,
+            zone_p_wall_3,
+            zone_n_seat_1,
+            zone_n_seat_2,
+            zone_n_floor_1,
+            zone_n_floor_2,
+            zone_n_wall_1,
+            zone_n_wall_2,
+            zone_n_wall_3,
+
+
           ],
         });
         map.addMany([

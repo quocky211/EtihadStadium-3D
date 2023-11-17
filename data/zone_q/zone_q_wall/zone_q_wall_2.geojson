@@ -1,0 +1,328 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_1"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1993426081550145, 53.4826195569621, 71],
+                        [-2.1993414530935302, 53.48265544482677, 71],
+                        [-2.1993416130984382, 53.4826914885311, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_1"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_2"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1993416130984382, 53.4826914885311, 71],
+                        [-2.1993432244576914, 53.48272358537215, 71],
+                        [-2.199345888071592, 53.482752728299, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_2"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_2"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199345888071592, 53.482752728299, 71],
+                        [-2.199349511822247, 53.48278020947123, 71],
+                        [-2.1993536901071544, 53.48281162008111, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_3"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_4"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1993536901071544, 53.48281162008111, 71],
+                        [-2.1993584489251568, 53.48284419249896, 71],
+                        [-2.199362927842497, 53.48287722510961, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_4"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_5"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199362927842497, 53.48287722510961, 71],
+                        [-2.199367365506146, 53.48290632909112, 71],
+                        [-2.199371599221906, 53.48293572201404, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_5"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_6"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199371599221906, 53.48293572201404, 71],
+                        [-2.1993770085401727, 53.482971412903645, 71],
+                        [-2.1993822468008712, 53.48300617997999, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_6"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_7"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1993822468008712, 53.48300617997999, 71],
+                        [-2.1993886380731613, 53.483044287082194, 71],
+                        [-2.199396470053243, 53.48308213547371, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_7"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_8"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199396470053243, 53.48308213547371, 71],
+                        [-2.1994063927717256, 53.48312186155821, 71],
+                        [-2.1994194254820525, 53.48316191237729, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_8"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_9"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1994194254820525, 53.48316191237729, 71],
+                        [-2.1994335975666486, 53.483209150146415, 71],
+                        [-2.1994495753760934, 53.483258955775185, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_9"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_10"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1994495753760934, 53.483258955775185, 71],
+                        [-2.1994634424585033, 53.48330211508718, 71],
+                        [-2.1994767953884713, 53.48334288239912, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_10"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_11"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1994767953884713, 53.48334288239912, 71],
+                        [-2.1994872095011457, 53.48337932524738, 71],
+                        [-2.199499820617643, 53.48341409766834, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_11"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_12"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199499820617643, 53.48341409766834, 71],
+                        [-2.199514966242226, 53.48345254384717, 71],
+                        [-2.1995308484855287, 53.48349343183149, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_12"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_13"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1995308484855287, 53.48349343183149, 71],
+                        [-2.1995464325280722, 53.48352921714155, 71],
+                        [-2.199563829195219, 53.48356844361806, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_13"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_14"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199563829195219, 53.48356844361806, 71],
+                        [-2.199580748759597, 53.483604858844195, 71],
+                        [-2.1995994869955715, 53.48364407204036, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_14"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_15"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1995994869955715, 53.48364407204036, 71],
+                        [-2.1996139581239493, 53.48367413056393, 71],
+                        [-2.1996293614322373, 53.48370448448883, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_15"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_16"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.1996293614322373, 53.48370448448883, 71],
+                        [-2.199652532775012, 53.483739033689716, 71],
+                        [-2.199677251248289, 53.48377382411923, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_16"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Building name": "Etihad",
+                "height": 150,
+                "idb": "zone_q_wall_2_17"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-2.199677251248289, 53.48377382411923, 71],
+                        [-2.1997166657094263, 53.483826947892894, 71],
+                        [-2.1996978758347767, 53.483801722997896, 71]
+                    ]
+                ]
+            },
+            "id": "zone_q_wall_2_17"
+        }
+    ]
+}
