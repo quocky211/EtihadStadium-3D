@@ -4376,7 +4376,7 @@
       }
 
       view.popup.defaultPopupTemplateEnabled = true;
-      // view.popup.autoOpenEnabled = false;
+      view.popup.autoOpenEnabled = false;
       view.on("click", function (event) {
         // Listen for the click event
         view.hitTest(event).then(function (hitTestResults) {
@@ -4696,16 +4696,16 @@
       const chair1 = new Point({
         x: -2.201051514763919,
         y: 53.48229769761818,
-        z: 88,
+        z: 1000,
       });
       Mesh.createFromGLTF(chair1, "./model/chair/scene.gltf")
         .then(function (geometry) {
-          geometry.scale(10, {
+          geometry.scale(1000, {
             origin: {
               chair1,
             },
           });
-          geometry.rotate(0, 0, 150);
+          geometry.rotate(0, 0, 0);
           const graphic = new Graphic({
             geometry,
             symbol: {
@@ -4724,6 +4724,72 @@
           view.graphics.add(graphic);
         })
         .catch(console.error);
+
+        // Banner
+        const banner1 = new Point({
+          x: -2.199165765018416,
+          y: 53.483099670143844,
+          z: 116.7,
+        });
+        Mesh.createFromGLTF(banner1, "./model/banner/banner.gltf")
+          .then(function (geometry) {
+            geometry.scale(1, {
+              origin: {
+                banner1,
+              },
+            });
+            geometry.rotate(359, 354, 100);
+            const graphic = new Graphic({
+              geometry,
+              symbol: {
+                type: "mesh-3d",
+                symbolLayers: [
+                  {
+                    type: "fill",
+                    material: {
+                      // color: "rgba(0, 0, 255, 0.5)"
+                    },
+                    size: 1000,
+                  },
+                ],
+              },
+            });
+            view.graphics.add(graphic);
+          })
+          .catch(console.error);
+        // banner 2
+        const banner2 = new Point({
+          x: -2.2016426053712337,
+          y: 53.48323569060665,
+          z: 115.7,
+        });
+        Mesh.createFromGLTF(banner2, "./model/banner/banner(sub).gltf")
+          .then(function (geometry) {
+            geometry.scale(1, {
+              origin: {
+                banner2,
+              },
+            });
+            geometry.rotate(359, 352, 280);
+            const graphic = new Graphic({
+              geometry,
+              symbol: {
+                type: "mesh-3d",
+                symbolLayers: [
+                  {
+                    type: "fill",
+                    material: {
+                      // color: "rgba(0, 0, 255, 0.5)"
+                    },
+                    size: 1000,
+                  },
+                ],
+              },
+            });
+            view.graphics.add(graphic);
+          })
+          .catch(console.error);
+
     });
     /* ============================================================ */
   </script>
