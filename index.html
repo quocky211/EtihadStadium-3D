@@ -4693,38 +4693,41 @@
         })
         .catch(console.error);
       // Chair 1
-      const chair1 = new Point({
-        x: -2.201051514763919,
-        y: 53.48229769761818,
-        z: 1000,
-      });
-      Mesh.createFromGLTF(chair1, "./model/chair/scene.gltf")
-        .then(function (geometry) {
-          geometry.scale(1000, {
-            origin: {
-              chair1,
-            },
-          });
-          geometry.rotate(0, 0, 0);
-          const graphic = new Graphic({
-            geometry,
-            symbol: {
-              type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                  material: {
-                    // color: "rgba(0, 0, 255, 0.5)"
+      const chairA_1 = [
+        { x: -2.2011130365454243, y: 53.48311206462348, z: 58},
+        { x: -2.201130435032567, y: 53.483163256975075, z: 58},
+        { x: -2.2011432406374225, y: 53.483214872103275, z: 58},
+      ];
+      chairA_1.forEach((location) => {
+        const chairA_1 = new Point(location);
+        Mesh.createFromGLTF(chairA_1, "./model/2rows-tribune/scene.gltf")
+          .then(function (geometry) {
+            geometry.scale(2, {
+              origin: {
+                chairA_1,
+              },
+            });
+            geometry.rotate(180, 0, 100);
+            const graphic = new Graphic({
+              geometry,
+              symbol: {
+                type: "mesh-3d",
+                symbolLayers: [
+                  {
+                    type: "fill",
+                    material: {
+                      // color: "rgba(0, 0, 255, 0.5)"
+                    },
+                    size: 1000,
                   },
-                  size: 1000,
-                },
-              ],
-            },
-          });
-          view.graphics.add(graphic);
-        })
-        .catch(console.error);
-
+                ],
+              },
+            });
+            view.graphics.add(graphic);
+          })
+          .catch(console.error);
+      });
+      
         // Banner
         const banner1 = new Point({
           x: -2.199165765018416,
