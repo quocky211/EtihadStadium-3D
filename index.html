@@ -3497,7 +3497,7 @@
             ],
           },
         },
-      });   
+      });
       // zone n
       const zone_n_seat_1 = new GeoJSONLayer({
         url: "./data/zone_n/zone_n_seat/zone_n_seat_1.geojson",
@@ -3880,6 +3880,25 @@
         },
       });
 
+      const zone_q_wall_4 = new GeoJSONLayer({
+                    url: "./data/zone_q/zone_q_wall/zone_q_wall_4.geojson",
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "polygon-3d",
+                            symbolLayers: [
+                                {
+                                    type: "extrude",
+                                    size: 13.5,
+                                    material: {
+                                        color: "#FFFAFA",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+
       const wire_parallel_stadium_1_paths = [
         [
           [-2.199453747613117, 53.482602731412896, 101.8],
@@ -4112,7 +4131,7 @@
       //     },
       //   },
       // });
-      
+
       /* ----------Start Round Columns---------- */
       // Round1 Columns
       const roundColumnLayerSpiral_1 = new GraphicsLayer();
@@ -4577,6 +4596,7 @@
           zone_n_wall_1,
           zone_n_wall_2,
           zone_n_wall_3,
+          zone_q_wall_4,
         ],
       });
       map.addMany([
@@ -4585,7 +4605,7 @@
         roundColumnLayerSpiral_3,
         roundColumnLayerSpiral_4,
         // polygon_banister_Layer,
-        
+
       ]);
 
       const view = new SceneView({
@@ -5117,7 +5137,7 @@
           })
           .catch(console.error);
       });
-      
+
         // Banner
         const banner1 = new Point({
           x: -2.199165765018416,
